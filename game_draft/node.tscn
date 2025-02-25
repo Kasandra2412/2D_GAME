@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx5mufkdgftcl"]
+
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="1_v5dmj"]
+[ext_resource type="PackedScene" uid="uid://bfr3cp3x5wjt6" path="res://tileset.tscn" id="2_ebgvt"]
+
+[node name="Node" type="Node"]
+
+[node name="Tileset" parent="." instance=ExtResource("2_ebgvt")]
+
+[node name="Player" parent="." instance=ExtResource("1_v5dmj")]
