@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://scripts/state_idle.gd" id="4_vqwaf"]
 [ext_resource type="Script" path="res://scripts/state_WALK.gd" id="5_cfp1s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b6v2d"]
-radius = 13.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_swmdq"]
+radius = 5.0
+height = 10.0
 
 [sub_resource type="Animation" id="Animation_5po58"]
 length = 0.85
@@ -172,22 +173,21 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-1, -31)
+collision_mask = 48
 script = ExtResource("1_dhnav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 2
-position = Vector2(3, 36)
-shape = SubResource("CircleShape2D_b6v2d")
+position = Vector2(1, 32)
+shape = SubResource("CapsuleShape2D_swmdq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(3, 20)
-scale = Vector2(0.636719, 0.714844)
+position = Vector2(1, 15)
+scale = Vector2(0.568359, 0.600586)
 texture = ExtResource("2_63fyl")
 hframes = 9
 vframes = 4
-
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
