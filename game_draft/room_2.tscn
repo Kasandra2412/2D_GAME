@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://dbvduec60cmx6"]
+[gd_scene load_steps=53 format=4 uid="uid://dbvduec60cmx6"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_23246"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_gcroa"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="10_gh0oi"]
 [ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="10_qa4qu"]
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="11_vublj"]
+[ext_resource type="AudioStream" uid="uid://bn3omx3d3ej2d" path="res://tilesets/flowing-water-246403.mp3" id="20_5bghb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tcsx"]
 texture = ExtResource("1_23246")
@@ -3358,6 +3359,12 @@ tile_set = SubResource("TileSet_0ewxw")
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAAMAAUAAAAAAAEAAAANAAUAAAAAAAEAAAANAAYAAAAAAAEAAAAMAAYAAAAAAAEAAAANAAcAAAAAAAEAAAAMAAcAAAAAAAEAAAAMAAgAAAAAAAEAAAAMAAkAAAAAAAEAAAANAAkAAAAAAAEAAAANAAgAAAAAAAEAAAANAAoAAAAAAAEAAAANAAsAAAAAAAEAAAAMAAoAAAAAAAEAAAAMAAsAAAAAAAEAAAAMAAwAAAAAAAEAAAAMAA0AAAAAAAEAAAAMAA4AAAAAAAEAAAANAA0AAAAAAAEAAAANAAwAAAAAAAEAAAANAA4AAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_qvbpe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor"]
+stream = ExtResource("20_5bghb")
+volume_db = -21.609
+autoplay = true
+mix_target = 2
 
 [node name="Floor2" type="TileMapLayer" parent="Floor"]
 texture_filter = 1
