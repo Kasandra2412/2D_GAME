@@ -3349,6 +3349,7 @@ sources/8 = SubResource("TileSetAtlasSource_v5kdr")
 sources/9 = SubResource("TileSetAtlasSource_ma60g")
 
 [node name="Room2" type="Node2D"]
+texture_filter = 1
 
 [node name="Floor" type="TileMapLayer" parent="."]
 texture_filter = 1
