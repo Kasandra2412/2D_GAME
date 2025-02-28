@@ -3446,5 +3446,5 @@ tile_map_data = PackedByteArray("AAACAAMAAQAJAAgAAAACAAQABQAJAAIAAAACAAUABQAJAAM
 tile_set = SubResource("TileSet_dffkb")
 
 [node name="Player" parent="." instance=ExtResource("11_vublj")]
-position = Vector2(2, 122)
+position = Vector2(8, 121)
 rotation = 0.0120929
