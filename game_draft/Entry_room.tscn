@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bfr3cp3x5wjt6"]
+[gd_scene load_steps=22 format=4 uid="uid://bfr3cp3x5wjt6"]
 
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="1_ogth5"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_2ox07"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cb8uu60qeabrn" path="res://tilesets/Dungeon_FurnitureB.png" id="4_f3y1l"]
 [ext_resource type="Texture2D" uid="uid://b7oa0prnoyc6b" path="res://tilesets/Dungeon_SandDecorationsC.png" id="5_im3e6"]
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="6_euvdq"]
+[ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="7_7byyo"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="7_xejon"]
 [ext_resource type="Script" path="res://area_2d.gd" id="8_6b53h"]
+[ext_resource type="Texture2D" uid="uid://giu0sbrdgts" path="res://tilesets/More objects/Dungeon_ObjectsDoorUp.png" id="9_w7kej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wni7p"]
 texture = ExtResource("1_ogth5")
@@ -805,6 +807,9 @@ texture = ExtResource("6_euvdq")
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3m563"]
+texture = ExtResource("7_7byyo")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xo3nd"]
 texture = ExtResource("7_xejon")
 1:1/0 = 0
@@ -941,6 +946,9 @@ texture = ExtResource("7_xejon")
 11:15/0 = 0
 12:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlckx"]
+texture = ExtResource("9_w7kej")
+
 [sub_resource type="TileSet" id="TileSet_ik4t7"]
 physics_layer_0/collision_layer = 48
 physics_layer_0/collision_mask = 0
@@ -951,6 +959,8 @@ sources/3 = SubResource("TileSetAtlasSource_uw8gj")
 sources/4 = SubResource("TileSetAtlasSource_5v1xv")
 sources/6 = SubResource("TileSetAtlasSource_xm8h3")
 sources/8 = SubResource("TileSetAtlasSource_xo3nd")
+sources/7 = SubResource("TileSetAtlasSource_3m563")
+sources/9 = SubResource("TileSetAtlasSource_dlckx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iw81k"]
 size = Vector2(21, 37)

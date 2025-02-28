@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=29 format=4 uid="uid://ry4c2wacydov"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_pihlh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b7oa0prnoyc6b" path="res://tilesets/Dungeon_SandDecorationsC.png" id="11_0p7p5"]
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="12_7134d"]
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="12_gd7wg"]
+[ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="12_gjdcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -737,6 +738,7 @@ texture = ExtResource("8_w8mdv")
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -1, -2, -3, 1, -3, 3, -2, 4, 2, 0, 4, -4, 2)
 7:5/0 = 0
 8:5/0 = 0
 0:6/0 = 0
@@ -1150,6 +1152,28 @@ texture = ExtResource("12_gd7wg")
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02bij"]
+texture = ExtResource("12_gjdcf")
+texture_region_size = Vector2i(12, 12)
+0:14/size_in_atlas = Vector2i(2, 2)
+0:14/animation_columns = 3
+0:14/animation_frame_0/duration = 0.5
+0:14/animation_frame_1/duration = 0.5
+0:14/animation_frame_2/duration = 1.0
+0:14/0 = 0
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/animation_columns = 3
+0:4/animation_frame_0/duration = 0.5
+0:4/animation_frame_1/duration = 0.5
+0:4/animation_frame_2/duration = 0.5
+0:4/0 = 0
+18:1/size_in_atlas = Vector2i(2, 2)
+18:1/animation_columns = 3
+18:1/animation_frame_0/duration = 0.5
+18:1/animation_frame_1/duration = 0.5
+18:1/animation_frame_2/duration = 0.5
+18:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_kenpm"]
 physics_layer_0/collision_layer = 48
 navigation_layer_0/layers = 1
@@ -1166,6 +1190,7 @@ sources/21 = SubResource("TileSetAtlasSource_uss8k")
 sources/24 = SubResource("TileSetAtlasSource_qs7tf")
 sources/25 = SubResource("TileSetAtlasSource_hbw5f")
 sources/26 = SubResource("TileSetAtlasSource_64m2p")
+sources/8 = SubResource("TileSetAtlasSource_02bij")
 
 [node name="Room3" type="Node2D"]
 texture_filter = 1
@@ -1190,6 +1215,10 @@ tile_set = SubResource("TileSet_kenpm")
 [node name="Walls4" type="TileMapLayer" parent="."]
 position = Vector2(0, 5)
 tile_map_data = PackedByteArray("AAAbAAsAAAABAAoAAAAbAAQAAAAHAAoAAAAdAAQAAAAJAAgAAAAHAAMAGAAAAAgAAAAXAAMAGAAAAAgAAAAOAA4AGAADAAEAAAAPAA4AGAADAAEAAAAQAA4AGAADAAEAAAAcAAQAGAAGAAEAAAAeAAkABAAMAAgAAAAeAAoABAAMAAkAAAAIAAMABAAJAAEAAAAIAAQABAAJAAIAAAAIAAUABAAJAAMAAAAJAAMABAAKAAEAAAAJAAQABAAKAAIAAAAJAAUABAAKAAMAAAAKAAMABAALAAEAAAAKAAQABAALAAIAAAAKAAUABAALAAMAAAA=")
+tile_set = SubResource("TileSet_kenpm")
+
+[node name="Random" type="TileMapLayer" parent="."]
+position = Vector2(0, 5)
 tile_set = SubResource("TileSet_kenpm")
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
