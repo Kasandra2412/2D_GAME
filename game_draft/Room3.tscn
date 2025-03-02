@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=31 format=4 uid="uid://ry4c2wacydov"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_pihlh"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="12_7134d"]
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="12_gd7wg"]
 [ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="12_gjdcf"]
+[ext_resource type="Script" path="res://Room3_exit.gd" id="14_v3s2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -1192,6 +1193,9 @@ sources/25 = SubResource("TileSetAtlasSource_hbw5f")
 sources/26 = SubResource("TileSetAtlasSource_64m2p")
 sources/8 = SubResource("TileSetAtlasSource_02bij")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pir65"]
+size = Vector2(56, 24)
+
 [node name="Room3" type="Node2D"]
 texture_filter = 1
 position = Vector2(-25, 10)
@@ -1222,4 +1226,14 @@ position = Vector2(0, 5)
 tile_set = SubResource("TileSet_kenpm")
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
-position = Vector2(248, 242)
+position = Vector2(248, 237)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_v3s2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(249, 275)
+shape = SubResource("RectangleShape2D_pir65")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]

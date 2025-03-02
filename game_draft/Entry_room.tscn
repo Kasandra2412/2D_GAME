@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="6_euvdq"]
 [ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="7_7byyo"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="7_xejon"]
-[ext_resource type="Script" path="res://area_2d.gd" id="8_6b53h"]
+[ext_resource type="Script" path="res://Entry_room_exit.gd" id="8_6b53h"]
 [ext_resource type="Texture2D" uid="uid://giu0sbrdgts" path="res://tilesets/More objects/Dungeon_ObjectsDoorUp.png" id="9_w7kej"]
 [ext_resource type="AudioStream" uid="uid://busiug6nr47dl" path="res://background_scenes/background music.mp3" id="10_xsl2w"]
 
