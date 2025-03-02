@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dtb3g4iajhl5s"]
+
+[ext_resource type="Texture2D" uid="uid://d0ka44rjctgcy" path="res://GUI assets/Icons/Screenshot_2025-03-01_at_10.26.39_PM-removebg-preview.png" id="1_v7kvn"]
+[ext_resource type="Script" path="res://item.gd" id="2_edpeq"]
+
+[resource]
+script = ExtResource("2_edpeq")
+title = "Blue_potion"
+icon = ExtResource("1_v7kvn")
+description = "A blue unknown potion. Should I take this? Perhaps save it for later..."

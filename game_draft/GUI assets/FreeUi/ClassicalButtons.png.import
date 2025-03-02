@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://byu1km2yiu4t7"
+path="res://.godot/imported/ClassicalButtons.png-74e59fc966f2b3ab0b7345e1e5fb46b1.image"
+
+[deps]
+
+source_file="res://GUI assets/FreeUi/ClassicalButtons.png"
+dest_files=["res://.godot/imported/ClassicalButtons.png-74e59fc966f2b3ab0b7345e1e5fb46b1.image"]
+
+[params]
+
