@@ -4054,3 +4054,4 @@ position = Vector2(-1, 0)
 
 [node name="Player" parent="." instance=ExtResource("13_sdxk1")]
 position = Vector2(371.927, 86.3118)
+speed = null

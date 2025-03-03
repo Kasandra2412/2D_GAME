@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bfr3cp3x5wjt6"]
+[gd_scene load_steps=24 format=4 uid="uid://bfr3cp3x5wjt6"]
 
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="1_ogth5"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_2ox07"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Entry_room_exit.gd" id="8_6b53h"]
 [ext_resource type="Texture2D" uid="uid://giu0sbrdgts" path="res://tilesets/More objects/Dungeon_ObjectsDoorUp.png" id="9_w7kej"]
 [ext_resource type="AudioStream" uid="uid://busiug6nr47dl" path="res://background_scenes/background music.mp3" id="10_xsl2w"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="12_2m0mw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wni7p"]
 texture = ExtResource("1_ogth5")
@@ -1005,6 +1006,10 @@ script = ExtResource("8_6b53h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(230.5, 65.5)
 shape = SubResource("RectangleShape2D_iw81k")
+
+[node name="Player" parent="." instance=ExtResource("12_2m0mw")]
+position = Vector2(0, 71)
+speed = null
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
