@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dctwvljjh01cd"]
+
+[ext_resource type="Script" path="res://GUI assets/slot.gd" id="1_h0tay"]
+[ext_resource type="Texture2D" uid="uid://qtrmwhn5j7qr" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/BlackBigCircleBoxWithBorder_27x27.png" id="1_i3sel"]
+
+[node name="Slot" type="PanelContainer"]
+texture_filter = 1
+offset_right = 67.0
+offset_bottom = 63.0
+script = ExtResource("1_h0tay")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_i3sel")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

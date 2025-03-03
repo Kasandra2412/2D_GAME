@@ -1,0 +1,440 @@
+[gd_scene load_steps=18 format=3 uid="uid://drnytytgmcpa3"]
+
+[ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="1_eo2a5"]
+[ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
+[ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
+[ext_resource type="Script" path="res://gui.gd" id="3_1fjhc"]
+[ext_resource type="Texture2D" uid="uid://46jp704lgs4f" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/RectangleBox_96x96.png" id="4_46ji6"]
+[ext_resource type="PackedScene" uid="uid://dctwvljjh01cd" path="res://GUI assets/slot.tscn" id="5_f4ddv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
+
+[sub_resource type="Theme" id="Theme_y1n43"]
+Button/font_sizes/font_size = 16
+Button/styles/focus = SubResource("StyleBoxEmpty_ql4uv")
+Button/styles/hover = ExtResource("1_qy13w")
+Button/styles/normal = ExtResource("2_8r4w5")
+RichTextLabel/font_sizes/normal_font_size = 16
+
+[sub_resource type="Theme" id="Theme_8in5v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pf3eb"]
+font_size = 48
+font_color = Color(0.692494, 0.586636, 0.450048, 1)
+outline_size = 3
+outline_color = Color(0.286216, 0.181008, 0.0666378, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_txw2d"]
+font_size = 48
+font_color = Color(0.692494, 0.586636, 0.450048, 1)
+outline_size = 5
+outline_color = Color(0.286275, 0.180392, 0.0666667, 0.568627)
+
+[sub_resource type="Animation" id="Animation_tjydh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(87, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(196, 90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m5rle"]
+resource_name = "hide_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(197, 89), Vector2(-129, 85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_o8ln7"]
+resource_name = "hide_tutorial"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(87, 27), Vector2(503, 28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lps4l"]
+resource_name = "show_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(-129, 85), Vector2(197, 89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_6xagu"]
+resource_name = "show_tutorial"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(503, 28), Vector2(87, 27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tutorial:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwjpn"]
+_data = {
+"RESET": SubResource("Animation_tjydh"),
+"hide_menu": SubResource("Animation_m5rle"),
+"hide_tutorial": SubResource("Animation_o8ln7"),
+"show_menu": SubResource("Animation_lps4l"),
+"show_tutorial": SubResource("Animation_6xagu")
+}
+
+[node name="UI" type="Control" node_paths=PackedStringArray("tutorial", "menu", "animation_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y1n43")
+script = ExtResource("3_1fjhc")
+tutorial = NodePath("Tutorial")
+menu = NodePath("Menu")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Menu" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -45.0
+offset_right = 44.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eo2a5")
+region_rect = Rect2(0.107164, 0.497743, 34.0618, 33.5593)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8in5v")
+text = "Play"
+
+[node name="Tutorial" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="Inventory" type="Button" parent="Menu/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Inventory
+"
+
+[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Inventory" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -93.0
+offset_right = 165.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_46ji6")
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -41.0
+offset_right = 151.0
+offset_bottom = 47.0
+grow_vertical = 2
+columns = 3
+
+[node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Slot5" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Slot6" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
+layout_mode = 2
+
+[node name="Description" type="NinePatchRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -67.0
+offset_right = -32.0
+offset_bottom = 65.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_eo2a5")
+region_rect = Rect2(0.232191, 0.323436, 33.1684, 33.4755)
+patch_margin_left = 6
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 8
+
+[node name="Name" type="Label" parent="Inventory/Description"]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 29.0
+
+[node name="Description" type="RichTextLabel" parent="Inventory/Description"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.5
+offset_top = -57.0
+offset_right = 46.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Icon" type="TextureRect" parent="Inventory/Description"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.39
+anchor_right = 0.5
+anchor_bottom = 0.39
+offset_left = -27.5
+offset_top = -20.48
+offset_right = 27.5
+offset_bottom = 20.52
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 139.0
+offset_bottom = 47.0
+text = "Inventory"
+label_settings = SubResource("LabelSettings_pf3eb")
+
+[node name="Tutorial" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -108.0
+offset_right = 162.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_46ji6")
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="Label" type="Label" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.5
+offset_top = 1.0
+offset_right = 46.5
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_txw2d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 35.0
+offset_right = 116.0
+offset_bottom = 63.0
+text = "Use the below buttons to move around:"
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cwjpn")
+}
+
+[connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

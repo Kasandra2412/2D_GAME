@@ -2,6 +2,7 @@ extends Area2D
 
 var entered = false
 
+#exit between rooms
 
 
 func _on_body_entered(body: Node2D) -> void:

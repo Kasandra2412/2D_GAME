@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cxnpcnjr14eiv"]
+
+[ext_resource type="Texture2D" uid="uid://d0ka44rjctgcy" path="res://GUI assets/Icons/Screenshot_2025-03-01_at_10.26.39_PM-removebg-preview.png" id="1_p4g5e"]
+[ext_resource type="Script" path="res://item.gd" id="2_eobam"]
+
+[resource]
+script = ExtResource("2_eobam")
+title = "Blue elixir"
+icon = ExtResource("1_p4g5e")
+description = "A blue liquid in a bottle. I am unsure what it does. Should I take it?"
