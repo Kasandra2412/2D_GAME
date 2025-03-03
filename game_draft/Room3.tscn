@@ -1224,7 +1224,6 @@ tile_set = SubResource("TileSet_kenpm")
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
 position = Vector2(247, 233)
-speed = null
 
 [node name="Doors" type="Node2D" parent="."]
 
