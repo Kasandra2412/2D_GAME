@@ -1226,7 +1226,7 @@ position = Vector2(0, 5)
 tile_set = SubResource("TileSet_kenpm")
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
-position = Vector2(248, 237)
+position = Vector2(247, 240)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("14_v3s2g")
