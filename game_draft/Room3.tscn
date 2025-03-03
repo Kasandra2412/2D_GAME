@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bi4unnixpvrh1" path="res://tilesets/Dungeon_FloorsWallsSandA5.png" id="9_22axw"]
 [ext_resource type="Texture2D" uid="uid://cb8uu60qeabrn" path="res://tilesets/Dungeon_FurnitureB.png" id="10_a7hkd"]
 [ext_resource type="Texture2D" uid="uid://b7oa0prnoyc6b" path="res://tilesets/Dungeon_SandDecorationsC.png" id="11_0p7p5"]
-[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="12_7134d"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="12_7134d"]
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="12_gd7wg"]
 [ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="12_gjdcf"]
 [ext_resource type="PackedScene" uid="uid://d3l850rwb51ml" path="res://door.tscn" id="14_s2rmi"]
@@ -1224,6 +1224,7 @@ tile_set = SubResource("TileSet_kenpm")
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
 position = Vector2(247, 233)
+speed = null
 
 [node name="Doors" type="Node2D" parent="."]
 
