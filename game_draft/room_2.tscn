@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="11_vublj"]
 [ext_resource type="AudioStream" uid="uid://bn3omx3d3ej2d" path="res://tilesets/flowing-water-246403.mp3" id="20_5bghb"]
 [ext_resource type="PackedScene" uid="uid://d3l850rwb51ml" path="res://door.tscn" id="21_d15np"]
-[ext_resource type="Script" path="res://tilesets/player.gd" id="22_jm3p2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tcsx"]
 texture = ExtResource("1_23246")
@@ -4347,6 +4346,28 @@ sources/16 = SubResource("TileSetAtlasSource_ujbvv")
 sources/17 = SubResource("TileSetAtlasSource_u7qdv")
 sources/18 = SubResource("TileSetAtlasSource_0nlsa")
 
+[sub_resource type="GDScript" id="GDScript_c26s3"]
+script/source = "extends CharacterBody2D
+
+class_name PlayerCharacter
+
+@export var speed: int = 200
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera = $Camera2D
+
+var movable = true
+
+func _ready():
+	if NavigationManager.has_signal(\"on_trigger_player_spawn\"):
+		NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	animation_player.play(\"move_\" + direction)
+	animation_player.stop()
+"
+
 [node name="Room2" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_y10in")
@@ -4396,8 +4417,7 @@ tile_set = SubResource("TileSet_dffkb")
 [node name="Player" parent="." instance=ExtResource("11_vublj")]
 position = Vector2(8, 121)
 rotation = 0.0120929
-script = ExtResource("22_jm3p2")
-speed = 200
+script = SubResource("GDScript_c26s3")
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -4405,6 +4425,7 @@ speed = 200
 position = Vector2(489, 118)
 destination_level_tag = "Room 3"
 destination_door_tag = "S"
+spawn_direction = null
 
 [node name="Spawn" parent="Doors/Door_E" index="1"]
 position = Vector2(-17, 0)
