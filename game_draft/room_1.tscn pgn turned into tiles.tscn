@@ -1503,7 +1503,7 @@ sources/12 = SubResource("TileSetAtlasSource_pvflf")
 sources/13 = SubResource("TileSetAtlasSource_pe1yy")
 
 [node name="Room1" type="Sprite2D"]
-position = Vector2(1437, 30)
+position = Vector2(1409, 127)
 texture = ExtResource("1_deawt")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
