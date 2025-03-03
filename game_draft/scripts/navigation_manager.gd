@@ -1,6 +1,5 @@
 extends Node
 
-const scene_room_2 = preload("res://room_2.tscn") 
 const scene_room3 = preload("res://Room3.tscn")
 
 var spawn_door_tag
@@ -9,8 +8,6 @@ func go_to_level(level_tag, destination_tag):
 	var scene_to_load
 	
 	match level_tag:
-		"room_2":
-			scene_to_load = scene_room_2
 		"Room3":
 			scene_to_load = scene_room3
 			
