@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://spk6fg03u6hw"]
+[gd_scene load_steps=18 format=3 uid="uid://spk6fg03u6hw"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_dhnav"]
-[ext_resource type="Texture2D" uid="uid://ut266munwe6n" path="res://character.PNG" id="2_63fyl"]
-[ext_resource type="Script" path="res://scripts/player_state_machine.gd" id="3_sxpc4"]
-[ext_resource type="Script" path="res://scripts/state_idle.gd" id="4_vqwaf"]
-[ext_resource type="Script" path="res://scripts/state_WALK.gd" id="5_cfp1s"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_5pu2u"]
+[ext_resource type="Texture2D" uid="uid://ut266munwe6n" path="res://character.PNG" id="2_c85v5"]
+[ext_resource type="Script" path="res://scripts/player_state_machine.gd" id="3_jovfs"]
+[ext_resource type="Script" path="res://scripts/state_idle.gd" id="4_eh4gt"]
+[ext_resource type="Script" path="res://scripts/state_WALK.gd" id="5_xrgww"]
+[ext_resource type="PackedScene" uid="uid://cv2acb60pnrwb" path="res://room_1.tscn" id="6_17lm6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_swmdq"]
 radius = 5.0
@@ -174,7 +175,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-1, -31)
 collision_mask = 48
-script = ExtResource("1_dhnav")
+script = ExtResource("1_5pu2u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 2
@@ -185,7 +186,7 @@ shape = SubResource("CapsuleShape2D_swmdq")
 texture_filter = 1
 position = Vector2(1, 15)
 scale = Vector2(0.568359, 0.600586)
-texture = ExtResource("2_63fyl")
+texture = ExtResource("2_c85v5")
 hframes = 9
 vframes = 4
 
@@ -195,10 +196,13 @@ libraries = {
 }
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("3_sxpc4")
+script = ExtResource("3_jovfs")
 
 [node name="idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_vqwaf")
+script = ExtResource("4_eh4gt")
 
 [node name="walk" type="Node" parent="StateMachine"]
-script = ExtResource("5_cfp1s")
+script = ExtResource("5_xrgww")
+
+[node name="Node2D" parent="." instance=ExtResource("6_17lm6")]
+position = Vector2(80.2125, 291.674)
