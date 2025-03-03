@@ -1,7 +1,6 @@
-[gd_scene load_steps=65 format=4 uid="uid://dbvduec60cmx6"]
+[gd_scene load_steps=63 format=4 uid="uid://dbvduec60cmx6"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_23246"]
-[ext_resource type="Script" path="res://room_2.gd" id="1_y10in"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_gcroa"]
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="3_eb267"]
 [ext_resource type="Texture2D" uid="uid://bpli1nn0wi4bk" path="res://tilesets/More objects/Dungeon_Minecart.png" id="3_v1cu6"]
@@ -19,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cvifoj8fk47" path="res://tilesets/TileSet_Dunegonjual.png" id="9_sk2mu"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="10_gh0oi"]
 [ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="10_qa4qu"]
-[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="11_vublj"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="11_vublj"]
 [ext_resource type="AudioStream" uid="uid://bn3omx3d3ej2d" path="res://tilesets/flowing-water-246403.mp3" id="20_5bghb"]
 [ext_resource type="PackedScene" uid="uid://d3l850rwb51ml" path="res://door.tscn" id="21_d15np"]
 
@@ -4370,7 +4369,6 @@ func _on_spawn(position: Vector2, direction: String):
 
 [node name="Room2" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_y10in")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -4417,7 +4415,10 @@ tile_set = SubResource("TileSet_dffkb")
 [node name="Player" parent="." instance=ExtResource("11_vublj")]
 position = Vector2(8, 121)
 rotation = 0.0120929
+<<<<<<< HEAD
 script = SubResource("GDScript_c26s3")
+=======
+>>>>>>> parent of 0301ba4 (update)
 
 [node name="Doors" type="Node2D" parent="."]
 
