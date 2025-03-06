@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cq181jtb3c7o4" path="res://tilesets/Dungeon_WaterA1.png" id="10_ylikn"]
 [ext_resource type="Texture2D" uid="uid://dhwkoh4foo26a" path="res://tilesets/More objects/Dungeon_Monsters1.png" id="11_6c0of"]
 [ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="12_kopra"]
-[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="13_sdxk1"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="13_sdxk1"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="14_wx8p3"]
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="15_pv7uv"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="16_rycil"]

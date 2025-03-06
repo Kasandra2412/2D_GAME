@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hsok1bjop0ia"]
 
-[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://tilesets/player.tscn" id="1_2epgb"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="1_2epgb"]
 [ext_resource type="PackedScene" uid="uid://bfr3cp3x5wjt6" path="res://Entry_room.tscn" id="1_s8i44"]
 
 [node name="Bacground" type="Node2D"]

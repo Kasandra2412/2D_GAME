@@ -2,16 +2,20 @@ class_name Player extends CharacterBody2D
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
-#var move_speed: float = 100.0
+var speed: float = 100.0
 #var state: String = "idle"
+
 
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
+var boulder: RigidBody2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 	pass # Replace with function body.
 
@@ -25,6 +29,7 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+		
 	
 	
 func set_direction()-> bool:
@@ -59,3 +64,4 @@ func AnimDirection() -> String:
 		return "left"
 	else:
 		return "right"
+	

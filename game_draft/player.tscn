@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://spk6fg03u6hw"]
+[gd_scene load_steps=19 format=3 uid="uid://spk6fg03u6hw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5pu2u"]
 [ext_resource type="Texture2D" uid="uid://ut266munwe6n" path="res://character.PNG" id="2_c85v5"]
 [ext_resource type="Script" path="res://scripts/player_state_machine.gd" id="3_jovfs"]
 [ext_resource type="Script" path="res://scripts/state_idle.gd" id="4_eh4gt"]
 [ext_resource type="Script" path="res://scripts/state_WALK.gd" id="5_xrgww"]
+[ext_resource type="Script" path="res://push_area.gd" id="6_sy2f1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_swmdq"]
 radius = 5.0
@@ -22,7 +23,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [18]
 }
 
 [sub_resource type="Animation" id="Animation_lu6nd"]
@@ -171,6 +172,9 @@ _data = {
 "walk_up": SubResource("Animation_7kf0s")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aetjt"]
+size = Vector2(19, 10.25)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-1, -31)
 collision_mask = 48
@@ -188,11 +192,24 @@ scale = Vector2(0.568359, 0.600586)
 texture = ExtResource("2_c85v5")
 hframes = 9
 vframes = 4
+frame = 18
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fo8w4")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 32)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("6_sy2f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.875)
+shape = SubResource("RectangleShape2D_aetjt")
+debug_color = Color(0.557004, 0.449944, 0.869037, 0.42)
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_jovfs")
