@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=35 format=4 uid="uid://ry4c2wacydov"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_pihlh"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bfjal4cwdyjo2" path="res://room3_puzzles/spikes.tscn" id="13_rcjta"]
 [ext_resource type="PackedScene" uid="uid://b8atqq3et0ll7" path="res://room3_puzzles/spiked_door.tscn" id="15_c7r7f"]
 [ext_resource type="PackedScene" uid="uid://b84ij15xq2j7" path="res://room3_puzzles/pushable_boulder.tscn" id="16_h2pwt"]
+[ext_resource type="PackedScene" path="res://room3_puzzles/lever.tscn" id="18_5froe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -1257,20 +1258,23 @@ position = Vector2(257, 254)
 position = Vector2(72, 184)
 
 [node name="PushableBoulder" parent="." instance=ExtResource("16_h2pwt")]
-position = Vector2(367, 196)
-collision_layer = 32
-collision_mask = 32
+position = Vector2(200, 107)
+collision_layer = 49
+collision_mask = 48
 
-[node name="Player" parent="." instance=ExtResource("12_7134d")]
-position = Vector2(247, 198)
-platform_floor_layers = 4294967041
-platform_wall_layers = 48
+[node name="Lever" parent="." instance=ExtResource("18_5froe")]
+position = Vector2(440, 234)
 
 [node name="SpikedDoor" parent="." instance=ExtResource("15_c7r7f")]
 position = Vector2(398, 202)
 
 [node name="SpikedDoor2" parent="." instance=ExtResource("15_c7r7f")]
 position = Vector2(398, 219)
+
+[node name="Player" parent="." instance=ExtResource("12_7134d")]
+position = Vector2(245, 243)
+platform_floor_layers = 4294967041
+platform_wall_layers = 48
 
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor" method="open_door"]
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor2" method="open_door"]
