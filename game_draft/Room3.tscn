@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=36 format=4 uid="uid://ry4c2wacydov"]
 
+[ext_resource type="Script" path="res://opening_trunk.gd" id="1_002qq"]
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_pihlh"]
 [ext_resource type="Texture2D" uid="uid://b0a0spegkug32" path="res://tilesets/More objects/Dungeon_ObjectBigdoor.png" id="4_rhh2j"]
@@ -16,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://t7q5absdfobx" path="res://room3_puzzles/pressure_plate.tscn" id="13_aoapu"]
 [ext_resource type="PackedScene" uid="uid://bfjal4cwdyjo2" path="res://room3_puzzles/spikes.tscn" id="13_rcjta"]
 [ext_resource type="PackedScene" uid="uid://b8atqq3et0ll7" path="res://room3_puzzles/spiked_door.tscn" id="15_c7r7f"]
-[ext_resource type="PackedScene" uid="uid://b84ij15xq2j7" path="res://room3_puzzles/pushable_boulder.tscn" id="16_h2pwt"]
-[ext_resource type="PackedScene" path="res://room3_puzzles/lever.tscn" id="18_5froe"]
+[ext_resource type="PackedScene" uid="uid://ch7th01j2d2oh" path="res://trunk.tscn" id="16_5a5hu"]
+[ext_resource type="PackedScene" uid="uid://xwcw4mqfypct" path="res://room3_puzzles/lever.tscn" id="18_5froe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -1216,6 +1217,7 @@ sources/7 = SubResource("TileSetAtlasSource_6cpt8")
 [node name="Room3" type="Node2D"]
 texture_filter = 1
 position = Vector2(-25, 10)
+script = ExtResource("1_002qq")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 z_index = -1
@@ -1233,7 +1235,8 @@ tile_map_data = PackedByteArray("AAAFAAIAAgACAAUAAAAFAAEAAgAAAAcAAAAGAAEAAgABAAY
 tile_set = SubResource("TileSet_kenpm")
 
 [node name="Walls3" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAeAA8AAAAMAAMAAAAbAAsAAAABAAYAAAAdAA8AAAAAAAYAAAAbAAQABAAMAAQAAAAbAAUABAAMAAUAAAAbAAYABAAMAAYAAAAcAAQABAANAAQAAAAcAAYABAAOAAoAAAAdAAQABAAOAAQAAAAdAAUABAAOAAUAAAAdAAYABAAOAAYAAAAcAAUABAANAAUAAAAeAAUABAAMAAEAAAANAAIAGAAAAAYAAAARAAIAGAAAAAYAAAAPAAEAGAAAAAwAAAAPAAMAGQAAAAMAAAAeAA0AGQAAAAEAAFA=")
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAeAA8AAAAMAAMAAAAbAAsAAAABAAYAAAAdAA8AAAAAAAYAAAAbAAQABAAMAAQAAAAbAAUABAAMAAUAAAAbAAYABAAMAAYAAAAcAAQABAANAAQAAAAcAAYABAAOAAoAAAAdAAQABAAOAAQAAAAdAAUABAAOAAUAAAAdAAYABAAOAAYAAAAcAAUABAANAAUAAAAeAAUABAAMAAEAAAANAAIAGAAAAAYAAAARAAIAGAAAAAYAAAAPAAEAGAAAAAwAAAAeAA0AGQAAAAEAAFA=")
 tile_set = SubResource("TileSet_kenpm")
 
 [node name="Walls4" type="TileMapLayer" parent="."]
@@ -1241,42 +1244,55 @@ position = Vector2(0, 5)
 tile_map_data = PackedByteArray("AAAbAAsAAAABAAoAAAAbAAQAAAAHAAoAAAAdAAQAAAAJAAgAAAAHAAMAGAAAAAgAAAAXAAMAGAAAAAgAAAAcAAQAGAAGAAEAAAAeAAkABAAMAAgAAAAeAAoABAAMAAkAAAAIAAMABAAJAAEAAAAIAAQABAAJAAIAAAAIAAUABAAJAAMAAAAJAAMABAAKAAEAAAAJAAQABAAKAAIAAAAJAAUABAAKAAMAAAAKAAMABAALAAEAAAAKAAQABAALAAIAAAAKAAUABAALAAMAAAA=")
 tile_set = SubResource("TileSet_kenpm")
 
-[node name="Puzzles" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAWAAQAFAAAAAAAAAAWAAUAFAAAAAEAAAAXAAQAFAABAAAAAAAXAAUAFAABAAEAAAA=")
-tile_set = SubResource("TileSet_kenpm")
-
-[node name="Spikes" parent="." instance=ExtResource("13_rcjta")]
+[node name="Timed Spikes" type="Node2D" parent="."]
 position = Vector2(225, 254)
 
-[node name="Spikes2" parent="." instance=ExtResource("13_rcjta")]
-position = Vector2(241, 254)
+[node name="Spikes" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
 
-[node name="Spikes3" parent="." instance=ExtResource("13_rcjta")]
-position = Vector2(257, 254)
+[node name="Spikes2" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(16, 0)
+
+[node name="Spikes3" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(32, 0)
+
+[node name="Spikes4" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(16, -156)
+
+[node name="Spikes5" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(31, -170)
+
+[node name="Spikes6" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(1, -171)
+
+[node name="Spikes7" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(-14, -184)
+
+[node name="Spikes8" parent="Timed Spikes" instance=ExtResource("13_rcjta")]
+position = Vector2(46, -184)
 
 [node name="Pressure_plate" parent="." instance=ExtResource("13_aoapu")]
 position = Vector2(72, 184)
 
-[node name="PushableBoulder" parent="." instance=ExtResource("16_h2pwt")]
-position = Vector2(200, 107)
-collision_layer = 49
-collision_mask = 48
+[node name="Trunk" parent="." instance=ExtResource("16_5a5hu")]
+position = Vector2(367, 80)
 
 [node name="Lever" parent="." instance=ExtResource("18_5froe")]
-position = Vector2(440, 234)
-
-[node name="SpikedDoor" parent="." instance=ExtResource("15_c7r7f")]
-position = Vector2(398, 202)
+position = Vector2(440, 235)
 
 [node name="SpikedDoor2" parent="." instance=ExtResource("15_c7r7f")]
-position = Vector2(398, 219)
+position = Vector2(398, 218)
+
+[node name="SpikedDoor3" parent="." instance=ExtResource("15_c7r7f")]
+position = Vector2(398, 202)
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
-position = Vector2(245, 243)
+position = Vector2(247, 240)
 platform_floor_layers = 4294967041
 platform_wall_layers = 48
 
-[connection signal="activated" from="Pressure_plate" to="SpikedDoor" method="open_door"]
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor2" method="open_door"]
-[connection signal="deactivated" from="Pressure_plate" to="SpikedDoor" method="close_door"]
+[connection signal="activated" from="Pressure_plate" to="SpikedDoor3" method="open_door"]
 [connection signal="deactivated" from="Pressure_plate" to="SpikedDoor2" method="close_door"]
+[connection signal="deactivated" from="Pressure_plate" to="SpikedDoor3" method="close_door"]
+[connection signal="activated" from="Lever" to="Trunk" method="open_trunk"]
+[connection signal="deactivated" from="Lever" to="Trunk" method="close_trunk"]

@@ -15,6 +15,6 @@ func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, l
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("enter"):
-			get_tree().change_scene_to_file("res://Room3.tscn")
+			get_tree().change_scene_to_file("res://room_1.tscn")
 	
 			

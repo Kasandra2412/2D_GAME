@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b84ij15xq2j7"]
+[gd_scene load_steps=5 format=3 uid="uid://b84ij15xq2j7"]
 
 [ext_resource type="Texture2D" uid="uid://bdslpcf71btl0" path="res://room3_puzzles/Room3_puzzles_assets/boulder.png" id="2_jnt1e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l84cp"]
 
 [sub_resource type="GDScript" id="GDScript_qshd2"]
 script/source = "class_name PushBoulder extends RigidBody2D
@@ -26,10 +28,10 @@ func _set_push(value: Vector2) -> void:
 size = Vector2(13.5, 13.5)
 
 [node name="PushableBoulder" type="RigidBody2D"]
-collision_layer = 48
-collision_mask = 16
-mass = 0.012
-gravity_scale = 0.0
+collision_layer = 49
+collision_mask = 17
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_l84cp")
 lock_rotation = true
 script = SubResource("GDScript_qshd2")
 

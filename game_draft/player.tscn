@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://push_area.gd" id="6_sy2f1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_swmdq"]
-radius = 5.0
-height = 10.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="Animation" id="Animation_5po58"]
 length = 0.85
@@ -173,16 +173,16 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aetjt"]
-size = Vector2(19, 10.25)
+size = Vector2(24.375, 11.7578)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-1, -31)
 collision_mask = 48
 script = ExtResource("1_5pu2u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 2
-position = Vector2(1, 32)
+position = Vector2(0, 32)
 shape = SubResource("CapsuleShape2D_swmdq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -200,14 +200,15 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(1, 32)
-collision_layer = 0
-collision_mask = 16
+collision_layer = 3
+collision_mask = 48
 monitorable = false
 script = ExtResource("6_sy2f1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1.875)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_aetjt")
 debug_color = Color(0.557004, 0.449944, 0.869037, 0.42)
 

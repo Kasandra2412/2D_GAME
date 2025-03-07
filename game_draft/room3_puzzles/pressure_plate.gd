@@ -27,12 +27,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	check_is_activated()
 	
 
-
+'''
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	bodies -=1
 	check_is_activated()
+	'''
 	
-	
+	#there's some unecessary code here
 func check_is_activated() -> void:
 	if bodies > 0 and is_active ==false:
 		is_active = true
@@ -41,11 +42,13 @@ func check_is_activated() -> void:
 		audio.play()
 		activated.emit()
 		
-	elif bodies <= 0 and is_active == true:
-		is_active = false
+		
+	'''
+	elif bodies <= 0 and is_active == false:
+		is_active = true
 		sprite.texture = deactive_sprite
 		audio.stream = audio_deactivate
 		audio.play()
 		deactivated.emit()
-		
+	'''
 		
