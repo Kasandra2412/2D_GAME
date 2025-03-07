@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bfjal4cwdyjo2" path="res://room3_puzzles/spikes.tscn" id="13_rcjta"]
 [ext_resource type="PackedScene" uid="uid://b8atqq3et0ll7" path="res://room3_puzzles/spiked_door.tscn" id="15_c7r7f"]
 [ext_resource type="PackedScene" uid="uid://b84ij15xq2j7" path="res://room3_puzzles/pushable_boulder.tscn" id="16_h2pwt"]
-[ext_resource type="PackedScene" path="res://room3_puzzles/lever.tscn" id="18_5froe"]
+[ext_resource type="PackedScene" uid="uid://xwcw4mqfypct" path="res://room3_puzzles/lever.tscn" id="18_5froe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
