@@ -421,7 +421,7 @@ label_settings = SubResource("LabelSettings_txw2d")
 layout_mode = 0
 offset_left = 23.0
 offset_top = 35.0
-offset_right = 116.0
+offset_right = 239.0
 offset_bottom = 63.0
 text = "Use the below buttons to move around:"
 
