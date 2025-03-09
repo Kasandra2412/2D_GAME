@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cvifoj8fk47" path="res://tilesets/TileSet_Dunegonjual.png" id="9_sk2mu"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="10_gh0oi"]
 [ext_resource type="Texture2D" uid="uid://bb3dy4tkv1yar" path="res://tilesets/More objects/Dungeon_Slimes1.png" id="10_qa4qu"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="11_vublj"]
+[ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="11_vublj"]
 [ext_resource type="AudioStream" uid="uid://bn3omx3d3ej2d" path="res://tilesets/flowing-water-246403.mp3" id="20_5bghb"]
 [ext_resource type="Script" path="res://room2_exit.gd" id="21_hvrb6"]
 
