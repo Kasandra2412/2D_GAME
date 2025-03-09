@@ -16,13 +16,7 @@ func _input(event):
 			STATE.TUTORIAL:
 				ui_state = STATE.MENU
 				hide_and_show("tutorial", "menu")
-'''
-INVENTORY CODE -- WASN'T WORKING
-func set_description(thing : Item):
-	description.find_child("Name").text = thing.title
-	description.find_child("Icon").texture = thing.icon
-	description.find_child("Description").text = thing.description
-'''
+
 	
 	
 	#function to hide and show certain options

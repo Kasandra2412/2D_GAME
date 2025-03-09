@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://drnytytgmcpa3"]
+[gd_scene load_steps=16 format=3 uid="uid://drnytytgmcpa3"]
 
 [ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="1_eo2a5"]
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
 [ext_resource type="Script" path="res://gui.gd" id="3_1fjhc"]
 [ext_resource type="Texture2D" uid="uid://46jp704lgs4f" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/RectangleBox_96x96.png" id="4_46ji6"]
-[ext_resource type="PackedScene" uid="uid://dctwvljjh01cd" path="res://GUI assets/slot.tscn" id="5_f4ddv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
 
@@ -17,12 +16,6 @@ Button/styles/normal = ExtResource("2_8r4w5")
 RichTextLabel/font_sizes/normal_font_size = 16
 
 [sub_resource type="Theme" id="Theme_8in5v"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pf3eb"]
-font_size = 48
-font_color = Color(0.692494, 0.586636, 0.450048, 1)
-outline_size = 3
-outline_color = Color(0.286216, 0.181008, 0.0666378, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_txw2d"]
 font_size = 48
@@ -217,15 +210,15 @@ animation_player = NodePath("AnimationPlayer")
 
 [node name="Menu" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -45.0
-offset_right = 44.0
-offset_bottom = 45.0
+anchors_preset = -1
+anchor_left = 0.406
+anchor_top = 0.407259
+anchor_right = 0.55
+anchor_bottom = 0.696259
+offset_left = 1.12001
+offset_top = -19.9599
+offset_right = 4.0
+offset_bottom = -19.9899
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_eo2a5")
@@ -236,6 +229,7 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
@@ -269,120 +263,6 @@ text = "Inventory
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="Inventory" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -93.0
-offset_right = 165.0
-offset_bottom = 115.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_46ji6")
-patch_margin_left = 11
-patch_margin_top = 11
-patch_margin_right = 12
-patch_margin_bottom = 13
-
-[node name="GridContainer" type="GridContainer" parent="Inventory"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 18.0
-offset_top = -41.0
-offset_right = 151.0
-offset_bottom = 47.0
-grow_vertical = 2
-columns = 3
-
-[node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Slot5" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Slot6" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("5_f4ddv")]
-layout_mode = 2
-
-[node name="Description" type="NinePatchRect" parent="Inventory"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -67.0
-offset_right = -32.0
-offset_bottom = 65.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("1_eo2a5")
-region_rect = Rect2(0.232191, 0.323436, 33.1684, 33.4755)
-patch_margin_left = 6
-patch_margin_top = 7
-patch_margin_right = 7
-patch_margin_bottom = 8
-
-[node name="Name" type="Label" parent="Inventory/Description"]
-layout_mode = 1
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 29.0
-
-[node name="Description" type="RichTextLabel" parent="Inventory/Description"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.5
-offset_top = -57.0
-offset_right = 46.5
-offset_bottom = -11.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Icon" type="TextureRect" parent="Inventory/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.39
-anchor_right = 0.5
-anchor_bottom = 0.39
-offset_left = -27.5
-offset_top = -20.48
-offset_right = 27.5
-offset_bottom = 20.52
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Inventory"]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 15.0
-offset_right = 139.0
-offset_bottom = 47.0
-text = "Inventory"
-label_settings = SubResource("LabelSettings_pf3eb")
 
 [node name="Tutorial" type="NinePatchRect" parent="."]
 visible = false
