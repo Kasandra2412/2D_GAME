@@ -1,0 +1,210 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1jg1lvumadn6"]
+
+[ext_resource type="Script" path="res://room3_puzzles/chest.gd" id="1_wn6mj"]
+[ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="1_x0pn7"]
+[ext_resource type="Texture2D" uid="uid://mvkh8b6kvl5x" path="res://tilesets/tileset.png" id="3_ym3ba"]
+[ext_resource type="PackedScene" uid="uid://bohmnfj1ofkwb" path="res://room3_puzzles/key_1.tscn" id="4_1gfxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ia7t"]
+size = Vector2(16, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8htnb"]
+size = Vector2(22, 22)
+
+[sub_resource type="Animation" id="Animation_jcuor"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.98024e-08, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Key:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Key:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Key:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fu4lb"]
+resource_name = "chest"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a0fww"]
+resource_name = "open_chest"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.98025e-08, 3), Vector2(-2.98024e-08, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Key:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.290196), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Key:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Key:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4f4ql"]
+_data = {
+"RESET": SubResource("Animation_jcuor"),
+"chest": SubResource("Animation_fu4lb"),
+"open_chest": SubResource("Animation_a0fww")
+}
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_wn6mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x0pn7")
+hframes = 3
+region_enabled = true
+region_rect = Rect2(0, 43.0945, 48.2627, 22.1555)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7ia7t")
+
+[node name="Key" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2.98024e-08, 3)
+rotation = 1.02625
+scale = Vector2(0.553428, 0.53624)
+texture = ExtResource("3_ym3ba")
+region_enabled = true
+region_rect = Rect2(3.1049, 80.253, 10.5478, 11.1889)
+
+[node name="chest_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest_area"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_8htnb")
+debug_color = Color(0.359924, 0.617551, 0, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_4f4ql")
+}
+
+[node name="Key1" parent="." instance=ExtResource("4_1gfxa")]
+visible = false
+
+[connection signal="body_entered" from="chest_area" to="." method="_on_chest_area_body_entered"]
+[connection signal="body_exited" from="chest_area" to="." method="_on_chest_area_body_exited"]
+[connection signal="chest_opened" from="Key1" to="." method="chest_opened"]

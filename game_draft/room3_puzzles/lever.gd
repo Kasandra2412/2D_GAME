@@ -1,9 +1,14 @@
 class_name Lever extends Node2D
 
 signal activated 
-signal deactivated 
+signal deactivated
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio : AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_activate : AudioStream = preload("res://room3_puzzles/Room3_puzzles_assets/lever-01.wav")
+@onready var audio_deactivate : AudioStream = preload("res://room3_puzzles/Room3_puzzles_assets/lever-02.wav")
+
+
 var is_lever_pulled = false
 var player_nearby = false
 
@@ -15,9 +20,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click") and player_nearby == true:
 		if is_lever_pulled == true:
 			unpull_lever()
+			audio.stream = audio_deactivate
+			audio.play()
 			deactivated.emit()
 		elif is_lever_pulled == false:
 			pull_lever()
+			audio.stream = audio_activate
+			audio.play()
 			activated.emit()
 	if Input.is_action_just_pressed("click") and player_nearby == false:
 		print ("Player too far! Can't pull lever.")
