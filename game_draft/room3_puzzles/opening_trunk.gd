@@ -5,6 +5,7 @@ class_name OpenTrunk extends Node2D
 
 var player_nearby = false
 var is_chest_key_taken = false
+var is_trunk_open = false #tracking if the trunk is open
 #getting the key
 func _ready() -> void:
 	pass
@@ -12,22 +13,27 @@ func _ready() -> void:
 	
 func _process(delta) -> void:
 	if Input.is_action_just_pressed("click") and player_nearby == true:
-		chest_key.visible = false
-		is_chest_key_taken = true
+		if is_trunk_open:
+			chest_key.visible = false
+			is_chest_key_taken = true
 		
 
 func open_trunk():
 	if is_chest_key_taken == false:
 		animation_player.play("open_trunk")
+		
 	else:
 		animation_player.play("open_trunk_no_key")
+	is_trunk_open = true
 	
 	
 func close_trunk():
-	if is_chest_key_taken == false:
+	if is_chest_key_taken == false and not is_trunk_open:
 		animation_player.play("close_trunk")
+		is_trunk_open = true
 	else:
 		animation_player.play("close_trunk_no_key")
+	
 
 #actions to notice distance to the key
 func _on_picking_key_body_entered(body: Node2D) -> void:

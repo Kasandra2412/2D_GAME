@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1jg1lvumadn6"]
+[gd_scene load_steps=10 format=3 uid="uid://c1jg1lvumadn6"]
 
 [ext_resource type="Script" path="res://room3_puzzles/chest.gd" id="1_wn6mj"]
 [ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="1_x0pn7"]
 [ext_resource type="Texture2D" uid="uid://mvkh8b6kvl5x" path="res://tilesets/tileset.png" id="3_ym3ba"]
-[ext_resource type="PackedScene" uid="uid://cn7dfms3k2qp5" path="res://room3_puzzles/Final_Door_Key.tscn" id="5_knsc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ia7t"]
 size = Vector2(16, 19)
@@ -195,8 +194,6 @@ region_rect = Rect2(3.1049, 80.253, 10.5478, 11.1889)
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_8htnb")
 debug_color = Color(0.359924, 0.617551, 0, 0.42)
-
-[node name="Key1" parent="." instance=ExtResource("5_knsc4")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")

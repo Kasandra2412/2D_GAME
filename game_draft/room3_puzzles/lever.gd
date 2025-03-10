@@ -17,17 +17,18 @@ func _ready() -> void:
 	
 # process function to play animations
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click") and player_nearby == true:
-		if is_lever_pulled == true:
-			unpull_lever()
-			audio.stream = audio_deactivate
-			audio.play()
-			deactivated.emit()
-		elif is_lever_pulled == false:
-			pull_lever()
-			audio.stream = audio_activate
-			audio.play()
-			activated.emit()
+	if player_nearby == true:
+		if Input.is_action_just_pressed("click"):
+			if is_lever_pulled == true:
+				unpull_lever()
+				audio.stream = audio_deactivate
+				audio.play()
+				deactivated.emit()
+			elif is_lever_pulled == false:
+				pull_lever()
+				audio.stream = audio_activate
+				audio.play()
+				activated.emit()
 	if Input.is_action_just_pressed("click") and player_nearby == false:
 		print ("Player too far! Can't pull lever.")
 		pass

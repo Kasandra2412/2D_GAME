@@ -1,15 +1,20 @@
 extends StaticBody2D
 
 signal chest_opened
-
+@export var trunk:  OpenTrunk
 var chest_key_taken = false
 var in_chest_zone = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if chest_key_taken == false:
-		chest_key_taken = true
-		$Chest_Key.queue_free()
+	if trunk != null:
+		if chest_key_taken == false and trunk.is_trunk_open:
+			print("Trunk is open. Key can be retrieved")
+			chest_key_taken = true
+			$Chest_Key.queue_free()
+	else:
+		print("trunk null!")
+		pass
 		
 func _on_chest_area_2_body_entered(body) -> void:
 	if body.name == "Player":

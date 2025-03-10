@@ -1,13 +1,13 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
 var player_nearby = false
 var entered = false
 var door_opened = false
 
+
 func _process(delta) -> void:
-	if entered == true:
+	if entered == true and door_opened == true:
 		if Input.is_action_just_pressed("enter"):
 			get_tree().change_scene_to_file("res://bacground.tscn")
 
@@ -16,8 +16,8 @@ func _ready() -> void:
 	pass
 
 func open_door():
-	door_opened = true
-	animation_player.play("open_door")
+		animation_player.play("open_door")
+		door_opened = true
 
 
 func _on_door_area_to_leave_body_entered(body: PhysicsBody2D) -> void:
