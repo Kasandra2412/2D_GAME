@@ -319,8 +319,9 @@ _data = {
 "open_trunk_no_key": SubResource("Animation_fv06i")
 }
 
-[node name="Trunk" type="Node2D"]
+[node name="Trunk" type="Node2D" node_paths=PackedStringArray("chest_key_visible")]
 script = ExtResource("1_mvhcv")
+chest_key_visible = NodePath("Key1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)

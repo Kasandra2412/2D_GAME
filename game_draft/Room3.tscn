@@ -1579,7 +1579,7 @@ shape = SubResource("RectangleShape2D_c3ptj")
 position = Vector2(398, 202)
 
 [node name="Player" parent="." instance=ExtResource("12_7134d")]
-position = Vector2(248, 198)
+position = Vector2(247, 230)
 platform_floor_layers = 4294967041
 platform_wall_layers = 48
 
