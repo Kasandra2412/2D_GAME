@@ -1,5 +1,6 @@
-[gd_scene load_steps=94 format=4 uid="uid://dgxsb07kdm8dw"]
+[gd_scene load_steps=98 format=4 uid="uid://dgxsb07kdm8dw"]
 
+[ext_resource type="Script" path="res://room_1.gd" id="1_nyxyp"]
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="3_tinj1"]
 [ext_resource type="Texture2D" uid="uid://cb8uu60qeabrn" path="res://tilesets/Dungeon_FurnitureB.png" id="4_v0ij3"]
 [ext_resource type="Texture2D" uid="uid://bi4unnixpvrh1" path="res://tilesets/Dungeon_FloorsWallsSandA5.png" id="6_0dmm1"]
@@ -15,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="14_wx8p3"]
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="15_pv7uv"]
 [ext_resource type="Texture2D" uid="uid://brgkcmbm6i15t" path="res://Growing Plants/004.png" id="16_5wyce"]
+[ext_resource type="Script" path="res://plant.gd" id="16_7d6un"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="16_rycil"]
 [ext_resource type="Texture2D" uid="uid://mcy3s5xuum5f" path="res://Growing Plants/003.png" id="17_gdcsx"]
 [ext_resource type="Texture2D" uid="uid://csvo5wh1hvtq" path="res://tilesets/Watering_Can.webp" id="18_aldip"]
+[ext_resource type="Script" path="res://watercan.gd" id="18_f2qhd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f60q1"]
 texture = ExtResource("3_tinj1")
@@ -9085,7 +9088,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../plant 2:frame")
+tracks/1/path = NodePath("../plant 2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -9097,7 +9100,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../003:frame")
+tracks/2/path = NodePath("../003:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -9125,7 +9128,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../plant 2:frame")
+tracks/1/path = NodePath("../plant 2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -9137,7 +9140,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../003:frame")
+tracks/2/path = NodePath("../003:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -9165,7 +9168,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../plant 2:frame")
+tracks/1/path = NodePath("../plant 2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -9182,12 +9185,16 @@ _data = {
 "idle": SubResource("Animation_jianw")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dverb"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tnbn"]
 size = Vector2(56, 34)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dverb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8nm3x"]
+radius = 670.33
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_nyxyp")
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1
@@ -9245,7 +9252,8 @@ position = Vector2(-5, 1)
 tile_map_data = PackedByteArray("AAAXAAwAAQAGAAQAAAAXAA0AAQAGAAUAAAAYAAwAAQAHAAQAAAAYAA0AAQAHAAUAAAAWAA0AAQAEAAcAAAAVAAwAAQAFAAgAAAAWAAwAAQAJAAMAAAAVAA0AAQAJAAMAAAAXAAsAAQAFAAgAAAAWAAsAAQAJAAMAAAAGAAoAAQACAAkAAAAGAAsAAQACAAoAAAAHAAoAAQADAAkAAAAHAAsAAQADAAoAAAAcAA8AAQAHAAoAAAAkABsAAQAHAAoAAAA=")
 tile_set = SubResource("TileSet_buptb")
 
-[node name="Plant" type="Node" parent="."]
+[node name="Plant" type="Node2D" parent="."]
+script = ExtResource("16_7d6un")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
 root_node = NodePath("../plant 1")
@@ -9260,32 +9268,45 @@ texture = ExtResource("16_5wyce")
 hframes = 2
 vframes = 4
 
-[node name="Area2D" type="Area2D" parent="Plant"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/Area2D"]
-position = Vector2(368, 207)
-shape = SubResource("RectangleShape2D_4tnbn")
-
-[node name="plant 2" type="Sprite2D" parent="."]
+[node name="plant 2" type="Sprite2D" parent="Plant"]
 position = Vector2(371, 214)
 scale = Vector2(0.53125, 0.535156)
 texture = ExtResource("11_0x4wi")
 hframes = 2
 vframes = 4
 
-[node name="plant 3" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_dverb")
-
-[node name="003" type="Sprite2D" parent="."]
+[node name="003" type="Sprite2D" parent="Plant"]
 position = Vector2(346, 192)
 texture = ExtResource("17_gdcsx")
 hframes = 2
 vframes = 4
 
-[node name="WateringCan" type="Sprite2D" parent="."]
-position = Vector2(156.25, 241.125)
-scale = Vector2(0.0137062, 0.015625)
+[node name="plant 3" type="AnimatedSprite2D" parent="Plant"]
+sprite_frames = SubResource("SpriteFrames_dverb")
+
+[node name="Area2D" type="Area2D" parent="Plant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/Area2D"]
+position = Vector2(368, 207)
+shape = SubResource("RectangleShape2D_4tnbn")
+
+[node name="Watercan" type="Node2D" parent="."]
+position = Vector2(315, 244)
+scale = Vector2(0.017818, 0.0209704)
+script = ExtResource("18_f2qhd")
+
+[node name="WateringCan" type="Sprite2D" parent="Watercan"]
+position = Vector2(5107.2, -6056.16)
 texture = ExtResource("18_aldip")
+
+[node name="Area2D" type="Area2D" parent="Watercan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Watercan/Area2D"]
+position = Vector2(5107.2, -6056.16)
+shape = SubResource("CircleShape2D_8nm3x")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
+[connection signal="body_entered" from="Plant/Area2D" to="Plant" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Plant/Area2D" to="Plant" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Watercan/Area2D" to="Watercan" method="_on_area_2d_body_entered"]
