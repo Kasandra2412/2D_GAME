@@ -2,7 +2,6 @@ class_name room2_plate extends Node2D
 
 
 signal activated 
-signal deactivated 
 var bodies : int = 0
 var is_active: bool = false
 
@@ -22,11 +21,10 @@ func _ready() -> void:
 	sprite.texture = deactive_sprite
 	pass
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_area_entered(body: Node2D) -> void:
 	bodies +=1
-	check_is_activated()
-	
-
+	check_is_activated() # Replace with function body.
+	print ("Body entered the button.")
 '''
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	bodies -=1
@@ -38,6 +36,7 @@ func check_is_activated() -> void:
 	if bodies > 0 and is_active ==false:
 		is_active = true
 		sprite.texture = active_sprite
+		print ("Texture changed.")
 		audio.stream = audio_activate
 		audio.play()
 		activated.emit()
