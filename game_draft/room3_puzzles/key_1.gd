@@ -1,9 +1,9 @@
-extends StaticBody2D
+class_name Chest_Key extends StaticBody2D
 
 signal chest_opened
 @export var trunk:  OpenTrunk
 var chest_key_taken = false
-var in_chest_zone = false
+var in_chest_zone = false #variable to make the chest key visable 
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -30,3 +30,4 @@ func _process(delta):
 		if Input.is_action_just_pressed("click"):
 			print("Chest opened") #opens the chest
 			chest_opened.emit()
+			
