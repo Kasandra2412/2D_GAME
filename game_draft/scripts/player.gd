@@ -64,7 +64,3 @@ func AnimDirection() -> String:
 	else:
 		return "right"
 	
-
-
-func _on_plate_activated() -> void:
-	pass # Replace with function body.
