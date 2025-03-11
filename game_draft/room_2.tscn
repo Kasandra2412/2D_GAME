@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://dbvduec60cmx6"]
+[gd_scene load_steps=66 format=4 uid="uid://dbvduec60cmx6"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_23246"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="2_gcroa"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="11_vublj"]
 [ext_resource type="AudioStream" uid="uid://bn3omx3d3ej2d" path="res://tilesets/flowing-water-246403.mp3" id="20_5bghb"]
 [ext_resource type="Script" path="res://room2_exit.gd" id="21_hvrb6"]
+[ext_resource type="PackedScene" uid="uid://moiimwwpny7t" path="res://room2_puzzles/room_2_plate.tscn" id="22_p5phq"]
+[ext_resource type="Script" path="res://room2_puzzles/room_2_plate.gd" id="23_eiwf4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tcsx"]
 texture = ExtResource("1_23246")
@@ -4451,6 +4453,10 @@ script = ExtResource("21_hvrb6")
 position = Vector2(471.5, 123.5)
 shape = SubResource("RectangleShape2D_naf2e")
 debug_color = Color(0.237363, 0.636648, 0.0423149, 0.42)
+
+[node name="room2_plate" parent="." instance=ExtResource("22_p5phq")]
+position = Vector2(56, 232)
+script = ExtResource("23_eiwf4")
 
 [connection signal="body_entered" from="Room2_exit" to="Room2_exit" method="_on_body_entered"]
 [connection signal="body_shape_exited" from="Room2_exit" to="Room2_exit" method="_on_body_shape_exited"]
