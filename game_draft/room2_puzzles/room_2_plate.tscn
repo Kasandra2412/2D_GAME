@@ -8,7 +8,6 @@ size = Vector2(5.25, 5)
 [node name="room2_plate" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
 texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(0.211309, 0.211309)

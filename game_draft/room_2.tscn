@@ -4455,7 +4455,7 @@ shape = SubResource("RectangleShape2D_naf2e")
 debug_color = Color(0.237363, 0.636648, 0.0423149, 0.42)
 
 [node name="room2_plate" parent="." instance=ExtResource("22_p5phq")]
-position = Vector2(-39, 55)
+position = Vector2(56, 232)
 script = ExtResource("23_eiwf4")
 
 [connection signal="body_entered" from="Room2_exit" to="Room2_exit" method="_on_body_entered"]
