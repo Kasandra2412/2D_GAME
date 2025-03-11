@@ -4,6 +4,7 @@ extends Node2D
 var player_nearby = false
 var entered = false
 var door_opened = false
+@export var chest: Chest
 
 
 func _process(delta) -> void:
@@ -16,6 +17,7 @@ func _ready() -> void:
 	pass
 
 func open_door():
+	if chest.is_chest_open == true:
 		animation_player.play("open_door")
 		door_opened = true
 
