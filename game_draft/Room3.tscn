@@ -1615,19 +1615,26 @@ text = "00:00"
 
 [node name="LosingScreen" type="Panel" parent="."]
 z_index = 1
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -6.0
+offset_right = 503.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("26_oxxqh")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="LosingScreen"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 6.925
-anchor_top = 3.7
-anchor_right = 6.925
-anchor_bottom = 3.7
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -47.0
 offset_top = -49.0
 offset_right = 47.0

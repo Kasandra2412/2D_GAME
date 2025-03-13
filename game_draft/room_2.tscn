@@ -4482,23 +4482,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LosingScreen" type="Panel" parent="."]
 z_index = 1
-offset_left = -76.0
 offset_top = 1.0
-offset_right = -36.0
-offset_bottom = 41.0
+offset_right = 481.0
+offset_bottom = 269.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("25_64hdy")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="LosingScreen"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 7.85
-anchor_top = 3.525
-anchor_right = 7.85
-anchor_bottom = 3.525
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -47.0
-offset_top = -48.0
+offset_top = -49.0
 offset_right = 47.0
-offset_bottom = 50.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("26_or8qa")
