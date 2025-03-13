@@ -254,12 +254,6 @@ text = "Play"
 layout_mode = 2
 text = "Tutorial"
 
-[node name="Inventory" type="Button" parent="Menu/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Inventory
-"
-
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"

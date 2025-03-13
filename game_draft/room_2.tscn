@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dbvduec60cmx6"]
+[gd_scene load_steps=72 format=4 uid="uid://dbvduec60cmx6"]
 
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_23246"]
 [ext_resource type="Script" path="res://room_2.gd" id="1_goao1"]
@@ -24,6 +24,10 @@
 [ext_resource type="Script" path="res://room2_exit.gd" id="21_hvrb6"]
 [ext_resource type="PackedScene" uid="uid://b8atqq3et0ll7" path="res://room3_puzzles/spiked_door.tscn" id="22_eek50"]
 [ext_resource type="PackedScene" uid="uid://moiimwwpny7t" path="res://room2_puzzles/room_2_plate.tscn" id="22_p5phq"]
+[ext_resource type="Script" path="res://Losing_Screen.gd" id="25_64hdy"]
+[ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="26_or8qa"]
+[ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="27_dnbbt"]
+[ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="28_6jmpt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tcsx"]
 texture = ExtResource("1_23246")
@@ -4400,6 +4404,10 @@ sources/18 = SubResource("TileSetAtlasSource_0nlsa")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naf2e"]
 size = Vector2(11, 9)
 
+[sub_resource type="Theme" id="Theme_of2kr"]
+Button/styles/hover_pressed = ExtResource("27_dnbbt")
+Button/styles/normal = ExtResource("28_6jmpt")
+
 [node name="Room2" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_goao1")
@@ -4454,7 +4462,7 @@ tile_map_data = PackedByteArray("AAACAAMAAQAJAAgAAAACAAQABQAJAAIAAAACAAUABQAJAAM
 tile_set = SubResource("TileSet_dffkb")
 
 [node name="Player" parent="." instance=ExtResource("11_vublj")]
-position = Vector2(11, 114)
+position = Vector2(5, 114)
 platform_floor_layers = 4294967041
 platform_wall_layers = 48
 
@@ -4472,6 +4480,72 @@ offset_bottom = 11.0
 text = "00:00"
 metadata/_edit_use_anchors_ = true
 
+[node name="LosingScreen" type="Panel" parent="."]
+z_index = 1
+offset_left = -76.0
+offset_top = 1.0
+offset_right = -36.0
+offset_bottom = 41.0
+script = ExtResource("25_64hdy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LosingScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.85
+anchor_top = 3.525
+anchor_right = 7.85
+anchor_bottom = 3.525
+offset_left = -47.0
+offset_top = -48.0
+offset_right = 47.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_or8qa")
+region_rect = Rect2(0.0163803, -0.403003, 33.8441, 34.4583)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LosingScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_of2kr")
+alignment = 1
+
+[node name="Quit" type="Button" parent="LosingScreen/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LosingScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -37.0
+offset_right = 41.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your time is up. You did not escape in time. 
+Goodbye..."
+
 [connection signal="activated" from="room2_plate" to="SpikedDoor" method="open_door"]
 [connection signal="body_entered" from="Room2_exit" to="Room2_exit" method="_on_body_entered"]
 [connection signal="body_shape_exited" from="Room2_exit" to="Room2_exit" method="_on_body_shape_exited"]
+[connection signal="pressed" from="LosingScreen/NinePatchRect/VBoxContainer/Quit" to="LosingScreen" method="_on_quit_pressed"]

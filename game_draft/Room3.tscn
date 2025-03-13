@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=51 format=4 uid="uid://ry4c2wacydov"]
 
 [ext_resource type="Script" path="res://room_3.gd" id="1_q2yoj"]
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
@@ -25,6 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://bohmnfj1ofkwb" path="res://room3_puzzles/key_1.tscn" id="21_sps10"]
 [ext_resource type="PackedScene" uid="uid://c10feec15rbya" path="res://room3_puzzles/Door.tscn" id="22_ce733"]
 [ext_resource type="PackedScene" uid="uid://cn7dfms3k2qp5" path="res://room3_puzzles/Final_Door_Key.tscn" id="24_d62hl"]
+[ext_resource type="Script" path="res://Losing_Screen.gd" id="26_oxxqh"]
+[ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="26_w2loy"]
+[ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="27_b7y6j"]
+[ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="28_x2tw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -1485,6 +1489,10 @@ radius = 23.0217
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ptj"]
 size = Vector2(32, 57.5)
 
+[sub_resource type="Theme" id="Theme_bpov8"]
+Button/styles/hover_pressed = ExtResource("27_b7y6j")
+Button/styles/normal = ExtResource("28_x2tw6")
+
 [node name="Room3" type="Node2D"]
 texture_filter = 1
 position = Vector2(-25, 10)
@@ -1605,6 +1613,71 @@ offset_right = 67.0
 offset_bottom = 4.0
 text = "00:00"
 
+[node name="LosingScreen" type="Panel" parent="."]
+z_index = 1
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("26_oxxqh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LosingScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.925
+anchor_top = 3.7
+anchor_right = 6.925
+anchor_bottom = 3.7
+offset_left = -47.0
+offset_top = -49.0
+offset_right = 47.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_w2loy")
+region_rect = Rect2(0.0163803, -0.403003, 33.8441, 34.4583)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LosingScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_bpov8")
+alignment = 1
+
+[node name="Quit" type="Button" parent="LosingScreen/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LosingScreen/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -37.0
+offset_right = 41.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your time is up. You did not escape in time. 
+Goodbye..."
+
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor2" method="open_door"]
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor3" method="open_door"]
 [connection signal="deactivated" from="Pressure_plate" to="SpikedDoor2" method="close_door"]
@@ -1617,3 +1690,4 @@ text = "00:00"
 [connection signal="body_exited" from="Final_doors/Entering_area_to_open_door" to="Key2" method="_on_entering_area_to_open_door_body_exited"]
 [connection signal="chest_opened" from="Key1" to="Chest" method="chest_opened"]
 [connection signal="door_opened" from="Key2" to="Final_doors" method="open_door"]
+[connection signal="pressed" from="LosingScreen/NinePatchRect/VBoxContainer/Quit" to="LosingScreen" method="_on_quit_pressed"]

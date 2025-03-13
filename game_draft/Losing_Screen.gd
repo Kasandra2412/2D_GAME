@@ -1,12 +1,14 @@
-extends Node2D
+extends Panel
 
-@onready var label: Label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalTimer.start_time(780)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = '%02d:%02d'%GlobalTimer.get_time_left()
 	pass
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

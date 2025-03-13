@@ -1,6 +1,6 @@
 class_name Room3 extends Node2D
 @onready var label: Label = $timer
-
+@onready var losing_screen: Panel = $LosingScreen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,11 +12,8 @@ func _ready() -> void:
 	
 	var door_key = $Key2
 	var chest = $Chest
-	
 	door_key.chest = chest
-
-
-
+	losing_screen.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,4 +21,8 @@ func _process(delta: float) -> void:
 	var minutes = time_left[0] #minutes
 	var seconds = time_left[1] #secods
 	label.text="%02d:%02d" %[minutes,seconds]
-	pass
+	
+	if minutes == 0 and seconds == 0:
+		losing_screen.visible = true
+
+	

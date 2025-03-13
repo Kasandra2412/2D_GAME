@@ -1,23 +1,21 @@
-extends Node2D
+extends Node
 
-var time_left: float = 900
+var time_left: float = 780
 var running: bool = false
 
-signal time_is_up
-
-func _process(delta: float) -> void:
-	if running and time_left>1:
-		time_left -= delta
-	elif time_left <=0 and running:
-		running = false #stop the timer
-		time_is_up.emit()
 
 # Called when the node enters the scene tree for the first time.
 func start_time(duration: float):
 	if !running:
 		time_left = duration
 		running=true
-
+		
+func _process(delta: float) -> void:
+	if running and time_left>1:
+		time_left -= delta
+	elif time_left <=0 and running:
+		running = false  #stop the timer
+		
 
 func get_time_left():
 	var minute = floor(time_left / 60)
