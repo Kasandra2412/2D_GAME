@@ -1,10 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://drnytytgmcpa3"]
+[gd_scene load_steps=21 format=3 uid="uid://drnytytgmcpa3"]
 
 [ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="1_eo2a5"]
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
 [ext_resource type="Script" path="res://gui.gd" id="3_1fjhc"]
 [ext_resource type="Texture2D" uid="uid://46jp704lgs4f" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/RectangleBox_96x96.png" id="4_46ji6"]
+[ext_resource type="Texture2D" uid="uid://drxy1kq827ufh" path="res://GUI assets/FreeUi/click.png" id="6_skplr"]
+[ext_resource type="Texture2D" uid="uid://cexilkjq16rup" path="res://GUI assets/FreeUi/left-click.png" id="7_xawbq"]
+[ext_resource type="Texture2D" uid="uid://domn1gxluhqrn" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/QuitIcon.png" id="8_trd2h"]
+[ext_resource type="Texture2D" uid="uid://bq22ytnydaef7" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/PatternMiddleBottomBG_199x48.png" id="9_3twcw"]
+[ext_resource type="Texture2D" uid="uid://dhqr77um00dhl" path="res://GUI assets/FreeUi/ArrowDirections.png" id="10_tpq2v"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
 
@@ -19,7 +24,7 @@ RichTextLabel/font_sizes/normal_font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_txw2d"]
 font_size = 48
-font_color = Color(0.692494, 0.586636, 0.450048, 1)
+font_color = Color(0.756436, 0.622965, 0.459162, 1)
 outline_size = 5
 outline_color = Color(0.286275, 0.180392, 0.0666667, 0.568627)
 
@@ -291,18 +296,89 @@ grow_horizontal = 2
 text = "Tutorial"
 label_settings = SubResource("LabelSettings_txw2d")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
+[node name="clicking and changing scenes" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 35.0
-offset_right = 239.0
-offset_bottom = 63.0
-text = "Use the below buttons to move around:"
+offset_left = 66.0
+offset_top = 103.0
+offset_right = 276.0
+offset_bottom = 127.0
+text = "To interact with objects and switch scenes 
+use one of the following:"
+
+[node name="Click" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(115, 141)
+scale = Vector2(0.0473633, 0.0458985)
+texture = ExtResource("6_skplr")
+flip_h = true
+
+[node name="Left-click" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(189, 143)
+scale = Vector2(0.0488282, 0.0517578)
+texture = ExtResource("7_xawbq")
+
+[node name="Moving Text" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 33.0
+offset_right = 261.0
+offset_bottom = 95.0
+text = "Use the below buttons to move around the area:
+
+
+
+    up       down       left       right"
 
 [node name="TextureRect" type="TextureRect" parent="Tutorial"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="PatternMiddleBottomBg199x48" type="Sprite2D" parent="Tutorial"]
+position = Vector2(163, 171)
+texture = ExtResource("9_3twcw")
+
+[node name="ArrowDirections3" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(133, 64)
+scale = Vector2(1.346, 1.3)
+texture = ExtResource("10_tpq2v")
+region_enabled = true
+region_rect = Rect2(113.224, 33.7782, 13.8202, 12.2232)
+
+[node name="ArrowDirections4" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(83, 64)
+scale = Vector2(1.346, 1.346)
+texture = ExtResource("10_tpq2v")
+region_enabled = true
+region_rect = Rect2(97.6154, 32.2394, 13.7011, 13.3825)
+
+[node name="ArrowDirections2" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(183, 64)
+scale = Vector2(1.346, 1.346)
+texture = ExtResource("10_tpq2v")
+region_enabled = true
+region_rect = Rect2(114.338, 48.5544, 13.6622, 15.4456)
+
+[node name="ArrowDirections" type="Sprite2D" parent="Tutorial"]
+texture_filter = 1
+position = Vector2(233, 64)
+scale = Vector2(1.346, 1.346)
+texture = ExtResource("10_tpq2v")
+region_enabled = true
+region_rect = Rect2(98.6997, 46.8027, 12.7833, 17.1683)
+
+[node name="Button" type="Button" parent="Tutorial"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 11.0
+offset_right = 298.0
+offset_bottom = 33.0
+icon = ExtResource("8_trd2h")
+flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -312,3 +388,4 @@ libraries = {
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_button_pressed"]

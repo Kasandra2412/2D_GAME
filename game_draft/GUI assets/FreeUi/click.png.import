@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ybjsy1kofoof"
-path="res://.godot/imported/BuffIcons_16x16.png-21765975b841fd57a5ed0f7b1a5a0544.ctex"
+uid="uid://drxy1kq827ufh"
+path="res://.godot/imported/click.png-1ff53684faf7f247667b296802373a45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/BuffIcons_16x16.png"
-dest_files=["res://.godot/imported/BuffIcons_16x16.png-21765975b841fd57a5ed0f7b1a5a0544.ctex"]
+source_file="res://GUI assets/FreeUi/click.png"
+dest_files=["res://.godot/imported/click.png-1ff53684faf7f247667b296802373a45.ctex"]
 
 [params]
 
