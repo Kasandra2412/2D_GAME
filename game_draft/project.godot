@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 NavigationManager="*res://scripts/navigation_manager.gd"
 PlayerManager="*res://00_Globals/global_player_manager.gd"
+GlobalTimer="*res://game_timer.gd"
 
 [display]
 

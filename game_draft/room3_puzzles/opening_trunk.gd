@@ -4,6 +4,7 @@ class_name OpenTrunk extends Node2D
 @onready var chest_key: Sprite2D = $Key
 @export var chest_key_visible: Chest_Key  #transfer chest key visability variable 
 
+
 var player_nearby = false
 var is_chest_key_taken = false
 var is_trunk_open = false #tracking if the trunk is open
