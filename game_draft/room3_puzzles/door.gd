@@ -10,7 +10,7 @@ var door_opened = false
 func _process(delta) -> void:
 	if entered == true and door_opened == true:
 		if Input.is_action_just_pressed("enter"):
-			get_tree().change_scene_to_file("res://bacground.tscn")
+			get_tree().change_scene_to_file("res://exit_room.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
