@@ -19,17 +19,19 @@ var is_active: bool = false
 
 func _ready() -> void:
 	sprite.texture = deactive_sprite
+	print("Switch ready.")
 	pass
 
 func _on_area_2d_area_entered(body: Node2D) -> void:
 	bodies +=1
-	check_is_activated() # Replace with function body.
 	print ("Body entered the button.")
-'''
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	bodies -=1
-	check_is_activated()
-	'''
+	check_is_activated() # Replace with function body.
+	
+#'''
+#func _on_area_2d_body_exited(body: Node2D) -> void:
+	#bodies -=1
+	#check_is_activated()
+	#'''
 	
 	#there's some unecessary code here
 func check_is_activated() -> void:
@@ -42,11 +44,17 @@ func check_is_activated() -> void:
 		activated.emit()
 		
 		
-	'''
-	elif bodies <= 0 and is_active == false:
-		is_active = true
-		sprite.texture = deactive_sprite
-		audio.stream = audio_deactivate
-		audio.play()
-		deactivated.emit()
-	'''
+	#'''
+	#elif bodies <= 0 and is_active == false:
+		#is_active = true
+		#sprite.texture = deactive_sprite
+		#audio.stream = audio_deactivate
+		#audio.play()
+		#deactivated.emit()
+	#'''
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	bodies +=1
+	print ("Body entered the button.")
+	check_is_activated() # Replace with function body.

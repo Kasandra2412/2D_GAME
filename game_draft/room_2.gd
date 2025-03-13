@@ -19,3 +19,7 @@ func _process(delta: float) -> void:
 	
 	if minutes == 0 and seconds == 0:
 		losing_screen.visible = true
+
+
+func _on_room_2_plate_activated() -> void:
+	$SpikedDoor.open_door()
