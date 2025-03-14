@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://drnytytgmcpa3"]
+[gd_scene load_steps=24 format=3 uid="uid://drnytytgmcpa3"]
 
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dmt3q05l483q4" path="res://GUI assets/Edinnu_UI_asset_pack/Target/Target (5).png" id="9_qlulg"]
 [ext_resource type="Texture2D" uid="uid://bgoju7dpjtrhb" path="res://GUI assets/Edinnu_UI_asset_pack/Cursors/Cursor (6).png" id="10_7j4bm"]
 [ext_resource type="Texture2D" uid="uid://uqwy4ukk6fho" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/LeftArrowButton_7x10.png" id="11_mxgeo"]
+[ext_resource type="AudioStream" uid="uid://cpb3q71ptnj3r" path="res://GUI assets/gui sound.mp3" id="12_6wr6m"]
 [ext_resource type="Texture2D" uid="uid://n4fo4jk0ij0e" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (13).png" id="12_lf8rx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
@@ -429,6 +430,10 @@ flat = true
 libraries = {
 "": SubResource("AnimationLibrary_cwjpn")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_6wr6m")
+autoplay = true
 
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
