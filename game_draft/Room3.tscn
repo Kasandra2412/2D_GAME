@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c10feec15rbya" path="res://room3_puzzles/Door.tscn" id="22_ce733"]
 [ext_resource type="PackedScene" uid="uid://cn7dfms3k2qp5" path="res://room3_puzzles/Final_Door_Key.tscn" id="24_d62hl"]
 [ext_resource type="Script" path="res://Losing_Screen.gd" id="26_oxxqh"]
-[ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="26_w2loy"]
+[ext_resource type="Texture2D" uid="uid://b5pmnerxdhyb1" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (43).png" id="27_4bo82"]
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="27_b7y6j"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="28_x2tw6"]
 
@@ -1641,12 +1641,12 @@ offset_right = 47.0
 offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_w2loy")
-region_rect = Rect2(0.0163803, -0.403003, 33.8441, 34.4583)
-patch_margin_left = 8
-patch_margin_top = 7
-patch_margin_right = 7
-patch_margin_bottom = 8
+texture = ExtResource("27_4bo82")
+region_rect = Rect2(1.1208, 0.9326, 126.593, 129.562)
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 10
+patch_margin_bottom = 11
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -1676,10 +1676,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
+offset_left = -37.0
 offset_top = -37.0
-offset_right = 41.0
-offset_bottom = 15.0
+offset_right = 37.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Your time is up. You did not escape in time. 
