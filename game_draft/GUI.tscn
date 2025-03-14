@@ -1,15 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://drnytytgmcpa3"]
+[gd_scene load_steps=26 format=3 uid="uid://drnytytgmcpa3"]
 
-[ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="1_eo2a5"]
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
 [ext_resource type="Script" path="res://gui.gd" id="3_1fjhc"]
-[ext_resource type="Texture2D" uid="uid://46jp704lgs4f" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/RectangleBox_96x96.png" id="4_46ji6"]
-[ext_resource type="Texture2D" uid="uid://drxy1kq827ufh" path="res://GUI assets/FreeUi/click.png" id="6_skplr"]
-[ext_resource type="Texture2D" uid="uid://cexilkjq16rup" path="res://GUI assets/FreeUi/left-click.png" id="7_xawbq"]
+[ext_resource type="Texture2D" uid="uid://d4dur1vvdrfmu" path="res://GUI assets/GUI_Background/441e5ae94fb78f3a43cc53a355612b5a.jpg" id="4_fu0sd"]
+[ext_resource type="Texture2D" uid="uid://8hmpy1j0wrg7" path="res://GUI assets/GUI_Background/9e57faa4c015367ae378363cb9a7448b.jpg" id="5_pit67"]
+[ext_resource type="Texture2D" uid="uid://c7nae1l1id875" path="res://GUI assets/GUI_Background/b815dc17bf0399ae444e35ec1381c1a8.jpg" id="6_wbq8r"]
+[ext_resource type="Texture2D" uid="uid://eov8pd2rotx4" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (48).png" id="7_plwec"]
+[ext_resource type="Texture2D" uid="uid://c06qpbr167xy2" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (63).png" id="8_h3ijc"]
 [ext_resource type="Texture2D" uid="uid://domn1gxluhqrn" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/QuitIcon.png" id="8_trd2h"]
-[ext_resource type="Texture2D" uid="uid://bq22ytnydaef7" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/PatternMiddleBottomBG_199x48.png" id="9_3twcw"]
-[ext_resource type="Texture2D" uid="uid://dhqr77um00dhl" path="res://GUI assets/FreeUi/ArrowDirections.png" id="10_tpq2v"]
+[ext_resource type="Texture2D" uid="uid://dmt3q05l483q4" path="res://GUI assets/Edinnu_UI_asset_pack/Target/Target (5).png" id="9_qlulg"]
+[ext_resource type="Texture2D" uid="uid://bgoju7dpjtrhb" path="res://GUI assets/Edinnu_UI_asset_pack/Cursors/Cursor (6).png" id="10_7j4bm"]
+[ext_resource type="Texture2D" uid="uid://uqwy4ukk6fho" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/LeftArrowButton_7x10.png" id="11_mxgeo"]
+[ext_resource type="Texture2D" uid="uid://n4fo4jk0ij0e" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (13).png" id="12_lf8rx"]
+[ext_resource type="AudioStream" uid="uid://cpb3q71ptnj3r" path="res://GUI assets/gui sound.mp3" id="14_w3vu3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
 
@@ -21,10 +25,14 @@ Button/styles/normal = ExtResource("2_8r4w5")
 RichTextLabel/font_sizes/normal_font_size = 16
 
 [sub_resource type="Theme" id="Theme_8in5v"]
+Button/styles/focus = ExtResource("2_8r4w5")
+Button/styles/hover = ExtResource("1_qy13w")
+
+[sub_resource type="Theme" id="Theme_lkui1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_txw2d"]
-font_size = 48
-font_color = Color(0.756436, 0.622965, 0.459162, 1)
+font_size = 32
+font_color = Color(0.806301, 0.66243, 0.545039, 1)
 outline_size = 5
 outline_color = Color(0.286275, 0.180392, 0.0666667, 0.568627)
 
@@ -213,28 +221,44 @@ tutorial = NodePath("Tutorial")
 menu = NodePath("Menu")
 animation_player = NodePath("AnimationPlayer")
 
+[node name="441e5Ae94Fb78f3a43Cc53a355612b5a" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(238.875, 132.5)
+scale = Vector2(0.65068, 0.420635)
+texture = ExtResource("4_fu0sd")
+
+[node name="9e57Faa4c015367Ae378363Cb9a7448b" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(241, 137)
+scale = Vector2(0.769968, 0.783626)
+texture = ExtResource("5_pit67")
+
+[node name="B815Dc17Bf0399Ae444e35Ec1381c1a8" type="Sprite2D" parent="."]
+position = Vector2(230, 284)
+scale = Vector2(0.853333, 0.566256)
+texture = ExtResource("6_wbq8r")
+
 [node name="Menu" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.406
-anchor_top = 0.407259
-anchor_right = 0.55
-anchor_bottom = 0.696259
-offset_left = 1.12001
-offset_top = -19.9599
-offset_right = 4.0
-offset_bottom = -19.9899
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -45.0
+offset_right = 34.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_eo2a5")
-region_rect = Rect2(0.107164, 0.497743, 34.0618, 33.5593)
-patch_margin_left = 8
-patch_margin_top = 7
-patch_margin_right = 8
+texture = ExtResource("7_plwec")
+region_rect = Rect2(-1.08583, 0.497743, 89.4211, 88.7558)
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 10
 patch_margin_bottom = 8
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
@@ -263,6 +287,24 @@ text = "Tutorial"
 layout_mode = 2
 text = "Quit"
 
+[node name="Game Name" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = -46.5
+offset_top = -63.5
+offset_right = 115.5
+offset_bottom = -27.5
+theme_override_font_sizes/font_size = 48
+text = "GAME NAME"
+
+[node name="Label" type="Label" parent="Menu/Game Name"]
+layout_mode = 0
+offset_left = 25.5
+offset_top = 37.5
+offset_right = 134.5
+offset_bottom = 48.5
+theme_override_font_sizes/font_size = 16
+text = "Do you dare try to escape?"
+
 [node name="Tutorial" type="NinePatchRect" parent="."]
 visible = false
 layout_mode = 1
@@ -277,106 +319,124 @@ offset_right = 162.0
 offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_46ji6")
-patch_margin_left = 11
+texture = ExtResource("8_h3ijc")
+patch_margin_left = 6
 patch_margin_top = 11
-patch_margin_right = 12
-patch_margin_bottom = 13
+patch_margin_right = 7
+patch_margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tutorial"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 296.0
+offset_bottom = 69.0
+texture = ExtResource("9_qlulg")
+region_rect = Rect2(0.0204782, 0.998134, 13.0344, 12.8779)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Label" type="Label" parent="Tutorial"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -46.5
-offset_top = 1.0
-offset_right = 46.5
-offset_bottom = 33.0
+offset_left = -30.5
+offset_top = 7.0
+offset_right = 31.5
+offset_bottom = 39.0
 grow_horizontal = 2
+theme = SubResource("Theme_lkui1")
 text = "Tutorial"
 label_settings = SubResource("LabelSettings_txw2d")
 
 [node name="clicking and changing scenes" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
-offset_left = 66.0
-offset_top = 103.0
-offset_right = 276.0
-offset_bottom = 127.0
-text = "To interact with objects and switch scenes 
-use one of the following:"
+offset_left = 58.0
+offset_top = 133.0
+offset_right = 159.0
+offset_bottom = 157.0
+text = "To interact with objects 
+use the following:"
 
-[node name="Click" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(115, 141)
-scale = Vector2(0.0473633, 0.0458985)
-texture = ExtResource("6_skplr")
-flip_h = true
+[node name="clicking and changing scenes2" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 134.0
+offset_right = 267.0
+offset_bottom = 158.0
+text = "To switch between scenes use:"
 
-[node name="Left-click" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(189, 143)
-scale = Vector2(0.0488282, 0.0517578)
-texture = ExtResource("7_xawbq")
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 33.0
+offset_right = 307.0
+offset_bottom = 78.0
+text = "Welcome to the GAME NAME. You play the role of an enthusiastic explorer who wanders into the unknown. Suddenly you find yourself trapped and have only 13 minutes to find the exit or perish forever..."
 
 [node name="Moving Text" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 33.0
-offset_right = 261.0
-offset_bottom = 95.0
+offset_left = 56.0
+offset_top = 71.0
+offset_right = 257.0
+offset_bottom = 127.0
 text = "Use the below buttons to move around the area:
 
 
 
     up       down       left       right"
 
-[node name="TextureRect" type="TextureRect" parent="Tutorial"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Cursor(6)" type="Sprite2D" parent="Tutorial"]
+position = Vector2(96, 173)
+scale = Vector2(1.35714, 1.54167)
+texture = ExtResource("10_7j4bm")
 
-[node name="PatternMiddleBottomBg199x48" type="Sprite2D" parent="Tutorial"]
-position = Vector2(163, 171)
-texture = ExtResource("9_3twcw")
+[node name="LeftArrowButton7x11" type="Sprite2D" parent="Tutorial"]
+position = Vector2(227, 101)
+scale = Vector2(1.6, 1.659)
+texture = ExtResource("11_mxgeo")
+flip_h = true
 
-[node name="ArrowDirections3" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(133, 64)
-scale = Vector2(1.346, 1.3)
-texture = ExtResource("10_tpq2v")
-region_enabled = true
-region_rect = Rect2(113.224, 33.7782, 13.8202, 12.2232)
+[node name="LeftArrowButton7x12" type="Sprite2D" parent="Tutorial"]
+texture_repeat = 1
+position = Vector2(128, 101)
+rotation = 1.5708
+scale = Vector2(1.6, 1.659)
+texture = ExtResource("11_mxgeo")
+flip_h = true
 
-[node name="ArrowDirections4" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(83, 64)
-scale = Vector2(1.346, 1.346)
-texture = ExtResource("10_tpq2v")
-region_enabled = true
-region_rect = Rect2(97.6154, 32.2394, 13.7011, 13.3825)
+[node name="LeftArrowButton7x10" type="Sprite2D" parent="Tutorial"]
+position = Vector2(178, 101)
+scale = Vector2(1.6, 1.659)
+texture = ExtResource("11_mxgeo")
 
-[node name="ArrowDirections2" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(183, 64)
-scale = Vector2(1.346, 1.346)
-texture = ExtResource("10_tpq2v")
-region_enabled = true
-region_rect = Rect2(114.338, 48.5544, 13.6622, 15.4456)
+[node name="LeftArrowButton7x13" type="Sprite2D" parent="Tutorial"]
+position = Vector2(79, 101)
+rotation = 4.71239
+scale = Vector2(1.6, 1.659)
+texture = ExtResource("11_mxgeo")
+flip_h = true
 
-[node name="ArrowDirections" type="Sprite2D" parent="Tutorial"]
-texture_filter = 1
-position = Vector2(233, 64)
-scale = Vector2(1.346, 1.346)
-texture = ExtResource("10_tpq2v")
-region_enabled = true
-region_rect = Rect2(98.6997, 46.8027, 12.7833, 17.1683)
+[node name="Plate(13)" type="Sprite2D" parent="Tutorial"]
+position = Vector2(209, 173)
+texture = ExtResource("12_lf8rx")
+
+[node name="Label" type="Label" parent="Tutorial/Plate(13)"]
+offset_left = -14.0
+offset_top = -5.0
+offset_right = 17.0
+offset_bottom = 8.0
+text = "ENTER"
 
 [node name="Button" type="Button" parent="Tutorial"]
 layout_mode = 0
-offset_left = 277.0
-offset_top = 11.0
-offset_right = 298.0
-offset_bottom = 33.0
+offset_left = 301.0
+offset_top = -1.0
+offset_right = 322.0
+offset_bottom = 21.0
 icon = ExtResource("8_trd2h")
 flat = true
 
@@ -384,6 +444,11 @@ flat = true
 libraries = {
 "": SubResource("AnimationLibrary_cwjpn")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_w3vu3")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
