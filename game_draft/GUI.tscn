@@ -275,19 +275,19 @@ text = "Quit"
 
 [node name="Game Name" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = -46.5
-offset_top = -63.5
-offset_right = 115.5
-offset_bottom = -27.5
+offset_left = -58.0
+offset_top = -60.0
+offset_right = 155.0
+offset_bottom = -24.0
 theme_override_font_sizes/font_size = 48
-text = "GAME NAME"
+text = "Countdown to Ruin"
 
 [node name="Label" type="Label" parent="Menu/Game Name"]
 layout_mode = 0
-offset_left = 25.5
-offset_top = 37.5
-offset_right = 134.5
-offset_bottom = 48.5
+offset_left = 46.0
+offset_top = 35.0
+offset_right = 155.0
+offset_bottom = 46.0
 theme_override_font_sizes/font_size = 16
 text = "Do you dare try to enter?"
 
@@ -313,9 +313,9 @@ patch_margin_bottom = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Tutorial"]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 11.0
 offset_top = 32.0
-offset_right = 296.0
+offset_right = 303.0
 offset_bottom = 69.0
 texture = ExtResource("9_qlulg")
 region_rect = Rect2(0.0204782, 0.998134, 13.0344, 12.8779)
@@ -357,11 +357,11 @@ text = "To switch between scenes use:"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 33.0
-offset_right = 307.0
-offset_bottom = 78.0
-text = "Welcome to the GAME NAME. You play the role of an enthusiastic explorer who wanders into the unknown. Suddenly you find yourself trapped and have only 13 minutes to find the exit or perish forever..."
+offset_left = 13.0
+offset_top = 32.0
+offset_right = 305.0
+offset_bottom = 76.0
+text = "Welcome to Countdown to Ruin. You play the role of an enthusiastic explorer who wanders into the unknown. Suddenly you find yourself trapped and have only 13 minutes to find the exit or perish forever..."
 
 [node name="Moving Text" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
