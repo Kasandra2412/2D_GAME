@@ -981,7 +981,7 @@ tile_set = SubResource("TileSet_ik4t7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Walls"]
 stream = ExtResource("10_xsl2w")
-volume_db = -28.737
+volume_db = -19.882
 autoplay = true
 
 [node name="Floor3" type="TileMapLayer" parent="."]
