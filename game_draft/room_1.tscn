@@ -9479,7 +9479,7 @@ shape = SubResource("RectangleShape2D_2emre")
 position = Vector2(366.5, 207.5)
 shape = SubResource("RectangleShape2D_0pndi")
 
-[node name="Plant" type="Node2D" parent="."]
+[node name="Plant" type="Node2D" parent="." groups=["plants"]]
 script = ExtResource("16_7d6un")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
