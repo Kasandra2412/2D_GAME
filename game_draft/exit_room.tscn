@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="7_3o00g"]
 [ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="8_a0xvf"]
 [ext_resource type="Texture2D" uid="uid://giu0sbrdgts" path="res://tilesets/More objects/Dungeon_ObjectsDoorUp.png" id="9_s0ub1"]
-[ext_resource type="AudioStream" uid="uid://busiug6nr47dl" path="res://background_scenes/background music.mp3" id="10_a6l0v"]
+[ext_resource type="AudioStream" uid="uid://5yxghv1vj0r2" path="res://room3_puzzles/ambient-pads-loop-296968.mp3" id="11_cvwen"]
 [ext_resource type="PackedScene" uid="uid://spk6fg03u6hw" path="res://player.tscn" id="12_adpsh"]
 [ext_resource type="Script" path="res://Losing_Screen.gd" id="13_hm3ux"]
 [ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="14_1h63c"]
@@ -987,8 +987,8 @@ tile_map_data = PackedByteArray("AAAPAAYAAwAAAAQAAAAQAAYAAwABAAQAAAAPAAUAAwAAAAM
 tile_set = SubResource("TileSet_ik4t7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Walls"]
-stream = ExtResource("10_a6l0v")
-volume_db = -28.737
+stream = ExtResource("11_cvwen")
+volume_db = 0.978
 autoplay = true
 
 [node name="Floor3" type="TileMapLayer" parent="."]
