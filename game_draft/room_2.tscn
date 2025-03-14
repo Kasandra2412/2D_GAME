@@ -4494,7 +4494,6 @@ text = "00:00"
 metadata/_edit_use_anchors_ = true
 
 [node name="LosingScreen" type="Panel" parent="."]
-visible = false
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
