@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 		if body.name == "Player":
 			is_picked_up = true
-			$WateringCan.queue_free()  # Remove the water can from the scene after pickup
+			watering_can.queue_free()  # Remove the water can from the scene after pickup
 
 # Check for plants and trigger their growth
 func water_plants():
