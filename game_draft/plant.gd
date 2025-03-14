@@ -12,12 +12,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if player_nearby== true and Input.is_action_just_pressed("click"):
+	if player_nearby and Input.is_action_just_pressed("click"):
 		print("Flowers watered!")
 		water_plant()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body) -> void:
+	print(body)
 	if body.name == "Player":
+		print (player_nearby)
 		player_nearby=true
 	pass # Replace with function body.
 

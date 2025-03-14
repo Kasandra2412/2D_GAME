@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd5hb0evt2cnx"]
+
+[ext_resource type="Script" path="res://exit_door__animation.gd" id="1_l22eg"]
+[ext_resource type="Texture2D" uid="uid://r422q6852nqy" path="res://tilesets/More objects/Dungeon_ObjectsDungeon.png" id="1_uwitv"]
+
+[sub_resource type="Animation" id="Animation_p358m"]
+resource_name = "opening door"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_h7sg5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_el2ky"]
+_data = {
+"RESET": SubResource("Animation_h7sg5"),
+"opening door": SubResource("Animation_p358m")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8m0m"]
+size = Vector2(16, 26)
+
+[node name="exit door" type="Node2D"]
+script = ExtResource("1_l22eg")
+
+[node name="DungeonObjectsDungeon" type="Sprite2D" parent="."]
+position = Vector2(-1, -3)
+scale = Vector2(1, 0.981481)
+texture = ExtResource("1_uwitv")
+vframes = 4
+region_enabled = true
+region_rect = Rect2(141.374, 0, 22.5056, 110.96)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DungeonObjectsDungeon"]
+libraries = {
+"": SubResource("AnimationLibrary_el2ky")
+}
+
+[node name="clickable_door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickable_door"]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_a8m0m")

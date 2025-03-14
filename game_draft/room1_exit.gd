@@ -1,4 +1,7 @@
 extends Area2D
+@export var door_opened : Door_Opened
+
+
 
 var entered = false
 
@@ -12,7 +15,7 @@ func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, l
 	entered = false #  Replace with function body.
 
 func _process(delta):
-	if entered == true:
+	if entered == true and door_opened.door_opened == true:
 		if Input.is_action_just_pressed("enter"):
 			get_tree().change_scene_to_file("res://room_2.tscn")
 	
