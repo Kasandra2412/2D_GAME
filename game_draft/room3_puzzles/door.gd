@@ -23,7 +23,7 @@ func open_door():
 		animation_player.play("open_door")
 		audio.stream = audio_activate
 		audio.play()
-		await get_tree().create_timer(3.0).timeout  # Waits 3 seconds
+		await get_tree().create_timer(1.5).timeout  # Waits 2 seconds
 		audio.stop()
 		door_opened = true
 
