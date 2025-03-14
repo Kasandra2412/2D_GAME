@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://c10feec15rbya"]
+[gd_scene load_steps=11 format=4 uid="uid://c10feec15rbya"]
 
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://Dungeon_FloorsWallsA5.png" id="1_fjv78"]
 [ext_resource type="Script" path="res://room3_puzzles/door.gd" id="1_wqedt"]
 [ext_resource type="Texture2D" uid="uid://b0a0spegkug32" path="res://tilesets/More objects/Dungeon_ObjectBigdoor.png" id="2_xstei"]
+[ext_resource type="AudioStream" uid="uid://cu5dgg22n4shm" path="res://room3_puzzles/creaking-door-41706.mp3" id="4_3ukm1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxcnm"]
 texture = ExtResource("1_fjv78")
@@ -324,6 +325,9 @@ shape = SubResource("RectangleShape2D_ph2pn")
 libraries = {
 "": SubResource("AnimationLibrary_furhj")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3ukm1")
 
 [connection signal="body_entered" from="Door_area_to_leave" to="." method="_on_door_area_to_leave_body_entered"]
 [connection signal="body_exited" from="Door_area_to_leave" to="." method="_on_door_area_to_leave_body_exited"]
