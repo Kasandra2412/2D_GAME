@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://dgxsb07kdm8dw"]
+[gd_scene load_steps=100 format=4 uid="uid://dgxsb07kdm8dw"]
 
 [ext_resource type="Script" path="res://room_1.gd" id="1_nyxyp"]
 [ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="3_tinj1"]
@@ -6471,7 +6471,7 @@ sources/3 = SubResource("TileSetAtlasSource_mei35")
 sources/4 = SubResource("TileSetAtlasSource_0dmbs")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qc4h"]
-size = Vector2(142, 19)
+size = Vector2(16, 30.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7a8p"]
 texture = ExtResource("3_tinj1")
@@ -9074,6 +9074,9 @@ sources/7 = SubResource("TileSetAtlasSource_lhp68")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2emre"]
 size = Vector2(15, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pndi"]
+size = Vector2(57, 33)
+
 [sub_resource type="Animation" id="Animation_sg2xw"]
 length = 0.001
 tracks/0/type = "value"
@@ -9191,7 +9194,7 @@ _data = {
 [sub_resource type="SpriteFrames" id="SpriteFrames_dverb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tnbn"]
-size = Vector2(56, 34)
+size = Vector2(14, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nm3x"]
 radius = 670.33
@@ -9221,7 +9224,7 @@ tile_map_data = PackedByteArray("AAAWAAwAAAAGAAUAAAAXAAwAAAAGAAUAAAABAA4AAAAGAAI
 tile_set = SubResource("TileSet_03671")
 
 [node name="Player" parent="." instance=ExtResource("13_sdxk1")]
-position = Vector2(86, 90)
+position = Vector2(237, 5)
 
 [node name="furniture" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAwAAAAGAAUAAAAXAAwAAAAGAAUAAAABAA4AAAAGAAIAAAABAA8AAAAGAAMAAAACAA4AAAAHAAIAAAACAA8AAAAHAAMAAAADAA4AAAAIAAIAAAADAA8AAAAIAAMAAAAEAA4AAAAGAAIAAAAEAA8AAAAGAAMAAAAFAA4AAAAHAAIAAAAGAA8AAAAIAAMAAAAVAAsAAAAFAAQAAAAVAAwAAAAFAAUAAAAVAA0AAAAFAAUAAAAVAA4AAAAFAAYAAAAWAA4AAAAGAAYAAAAXAA4AAAAHAAYAAAAYAA4AAAAHAAYAAAAYAA0AAAAHAAUAAAAYAAwAAAAHAAUAAAAYAAsAAAAHAAQAAAANAAQAAAAAAAgAAAAOAAQAAAABAAgAAAAIAAMABgABAAYAAAAHAAMABgABAAYAAAAJAAMABgABAAYAAAAPAAQAAAACAAgAAAAQAAQAAAADAAgAAAA=")
@@ -9237,7 +9240,7 @@ position = Vector2(-1, 0)
 script = ExtResource("14_4lepx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(239, 8)
+position = Vector2(88, 95.75)
 shape = SubResource("RectangleShape2D_6qc4h")
 
 [node name="furniture2" type="TileMapLayer" parent="."]
@@ -9252,22 +9255,20 @@ tile_set = SubResource("TileSet_ndjgn")
 
 [node name="on top on top" type="TileMapLayer" parent="furniture2"]
 position = Vector2(-5, 0)
-tile_map_data = PackedByteArray("AAAXAAwAAQAGAAQAAAAXAA0AAQAGAAUAAAAYAAwAAQAHAAQAAAAYAA0AAQAHAAUAAAAWAA0AAQAEAAcAAAAWAAwAAQAJAAMAAAAVAA0AAQAJAAMAAAAWAAsAAQAJAAMAAAAcAA8AAQAHAAoAAAAkABsAAQAHAAoAAAA=")
+tile_map_data = PackedByteArray("AAAXAAwAAQAGAAQAAAAXAA0AAQAGAAUAAAAYAAwAAQAHAAQAAAAYAA0AAQAHAAUAAAAWAA0AAQAEAAcAAAAWAAwAAQAJAAMAAAAVAA0AAQAJAAMAAAAWAAsAAQAJAAMAAAAcAA8AAQAHAAoAAAAkABsAAQAHAAoAAAALAP//AgABAAUAAAAMAP//AgABAAUAAAANAP//AgABAAUAAAAPAP//AgABAAUAAAAOAP//AgABAAUAAAAQAP//AgABAAUAAAARAP//AgABAAUAAAASAP//AgABAAUAAAATAP//AgABAAUAAAAKAP//AgABAAUAAAAJAP//AgABAAUAAAAdAP//AgABAAUAAAAcAP//AgABAAUAAAAbAP//AgABAAUAAAAaAP//AgABAAUAAAAZAP//AgABAAUAAAAYAP//AgABAAUAAAAXAP//AgABAAUAAAAWAP//AgABAAUAAAAVAP//AgABAAUAAAAUAP//AgABAAUAAAAeAAcAAgABAAUAAAAeAAgAAgABAAUAAAAeAAkAAgABAAUAAAAeAAoAAgABAAUAAAAeAAsAAgABAAUAAAAeAAwAAgABAAUAAAAeAAIAAgABAAUAAAA=")
 tile_set = SubResource("TileSet_buptb")
 
 [node name="Area2D" type="Area2D" parent="furniture2/on top on top"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture2/on top on top/Area2D"]
-position = Vector2(455.5, 248.5)
+position = Vector2(432, 366)
 shape = SubResource("RectangleShape2D_2emre")
 
-[node name="Hidden Text" type="Label" parent="furniture2/on top on top/Area2D"]
-visible = false
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 39.0
-offset_bottom = 12.0
-text = "I thirst without voice, I wither without care; only a drop can revive what’s bare."
+[node name="Area2D2" type="Area2D" parent="furniture2/on top on top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture2/on top on top/Area2D2"]
+position = Vector2(366.5, 207.5)
+shape = SubResource("RectangleShape2D_0pndi")
 
 [node name="Plant" type="Node2D" parent="."]
 script = ExtResource("16_7d6un")
@@ -9305,7 +9306,7 @@ sprite_frames = SubResource("SpriteFrames_dverb")
 position = Vector2(-1, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/Area2D"]
-position = Vector2(368, 207)
+position = Vector2(457, 244)
 shape = SubResource("RectangleShape2D_4tnbn")
 
 [node name="Watercan" type="Node2D" parent="."]
@@ -9322,6 +9323,12 @@ texture = ExtResource("18_aldip")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Watercan/Area2D"]
 position = Vector2(5107.2, -6056.16)
 shape = SubResource("CircleShape2D_8nm3x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_right = 44.0
+offset_bottom = 11.0
+text = "00:00"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
