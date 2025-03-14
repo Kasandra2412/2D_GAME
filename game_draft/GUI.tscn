@@ -1,10 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://drnytytgmcpa3"]
+[gd_scene load_steps=24 format=3 uid="uid://drnytytgmcpa3"]
 
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="1_qy13w"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="2_8r4w5"]
 [ext_resource type="Script" path="res://gui.gd" id="3_1fjhc"]
-[ext_resource type="Texture2D" uid="uid://d4dur1vvdrfmu" path="res://GUI assets/GUI_Background/441e5ae94fb78f3a43cc53a355612b5a.jpg" id="4_fu0sd"]
-[ext_resource type="Texture2D" uid="uid://8hmpy1j0wrg7" path="res://GUI assets/GUI_Background/9e57faa4c015367ae378363cb9a7448b.jpg" id="5_pit67"]
 [ext_resource type="Texture2D" uid="uid://c7nae1l1id875" path="res://GUI assets/GUI_Background/b815dc17bf0399ae444e35ec1381c1a8.jpg" id="6_wbq8r"]
 [ext_resource type="Texture2D" uid="uid://eov8pd2rotx4" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (48).png" id="7_plwec"]
 [ext_resource type="Texture2D" uid="uid://c06qpbr167xy2" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (63).png" id="8_h3ijc"]
@@ -12,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dmt3q05l483q4" path="res://GUI assets/Edinnu_UI_asset_pack/Target/Target (5).png" id="9_qlulg"]
 [ext_resource type="Texture2D" uid="uid://bgoju7dpjtrhb" path="res://GUI assets/Edinnu_UI_asset_pack/Cursors/Cursor (6).png" id="10_7j4bm"]
 [ext_resource type="Texture2D" uid="uid://uqwy4ukk6fho" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/LeftArrowButton_7x10.png" id="11_mxgeo"]
+[ext_resource type="AudioStream" uid="uid://cpb3q71ptnj3r" path="res://GUI assets/gui sound.mp3" id="12_6wr6m"]
 [ext_resource type="Texture2D" uid="uid://n4fo4jk0ij0e" path="res://GUI assets/Edinnu_UI_asset_pack/Dialogue_plates/Plate (13).png" id="12_lf8rx"]
-[ext_resource type="AudioStream" uid="uid://cpb3q71ptnj3r" path="res://GUI assets/gui sound.mp3" id="14_w3vu3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4uv"]
 
@@ -221,18 +219,6 @@ tutorial = NodePath("Tutorial")
 menu = NodePath("Menu")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="441e5Ae94Fb78f3a43Cc53a355612b5a" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(238.875, 132.5)
-scale = Vector2(0.65068, 0.420635)
-texture = ExtResource("4_fu0sd")
-
-[node name="9e57Faa4c015367Ae378363Cb9a7448b" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(241, 137)
-scale = Vector2(0.769968, 0.783626)
-texture = ExtResource("5_pit67")
-
 [node name="B815Dc17Bf0399Ae444e35Ec1381c1a8" type="Sprite2D" parent="."]
 position = Vector2(230, 284)
 scale = Vector2(0.853333, 0.566256)
@@ -303,7 +289,7 @@ offset_top = 37.5
 offset_right = 134.5
 offset_bottom = 48.5
 theme_override_font_sizes/font_size = 16
-text = "Do you dare try to escape?"
+text = "Do you dare try to enter?"
 
 [node name="Tutorial" type="NinePatchRect" parent="."]
 visible = false
@@ -446,8 +432,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_w3vu3")
-volume_db = 1.0
+stream = ExtResource("12_6wr6m")
 autoplay = true
 
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
