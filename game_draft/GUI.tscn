@@ -353,7 +353,7 @@ offset_left = 166.0
 offset_top = 134.0
 offset_right = 267.0
 offset_bottom = 158.0
-text = "To switch between scenes use:"
+text = "To switch between doors use when nearby:"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
