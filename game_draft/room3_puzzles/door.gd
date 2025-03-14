@@ -5,6 +5,8 @@ var player_nearby = false
 var entered = false
 var door_opened = false
 @export var chest: Chest
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_activate : AudioStream = preload("res://room3_puzzles/creaking-door-41706.mp3")
 
 
 func _process(delta) -> void:
@@ -19,6 +21,10 @@ func _ready() -> void:
 func open_door():
 	if chest.is_chest_open == true:
 		animation_player.play("open_door")
+		audio.stream = audio_activate
+		audio.play()
+		await get_tree().create_timer(3.0).timeout  # Waits 3 seconds
+		audio.stop()
 		door_opened = true
 
 

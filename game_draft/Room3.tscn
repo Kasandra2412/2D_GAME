@@ -1691,6 +1691,7 @@ stream = ExtResource("30_ys2mi")
 volume_db = 2.476
 pitch_scale = 1.04
 autoplay = true
+parameters/looping = true
 
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor2" method="open_door"]
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor3" method="open_door"]
