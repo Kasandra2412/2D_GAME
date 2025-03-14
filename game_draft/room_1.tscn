@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://plant.gd" id="16_7d6un"]
 [ext_resource type="Texture2D" uid="uid://sv8grntj2hqs" path="res://tilesets/Dungeon_FloorsA2.png" id="16_rycil"]
 [ext_resource type="Texture2D" uid="uid://mcy3s5xuum5f" path="res://Growing Plants/003.png" id="17_gdcsx"]
-[ext_resource type="Texture2D" uid="uid://dtprn1na3oboi" path="res://Growing Plants/Growing Plants/Spritesheet_Plants.png" id="17_jiany"]
+[ext_resource type="Texture2D" uid="uid://dtprn1na3oboi" path="res://Growing Plants/Spritesheet_Plants.png" id="17_jiany"]
 [ext_resource type="Texture2D" uid="uid://csvo5wh1hvtq" path="res://tilesets/Watering_Can.webp" id="18_aldip"]
 [ext_resource type="Script" path="res://watercan.gd" id="18_f2qhd"]
 
