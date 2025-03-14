@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cjnadblre4aec"]
 
 [ext_resource type="Script" path="res://room3_puzzles/opening_trunk.gd" id="1_mvhcv"]
-[ext_resource type="Texture2D" uid="uid://b6um80216w1rx" path="res://tilesets/More objects/Dungeon_ObjectsBig.png" id="2_log6d"]
+[ext_resource type="Texture2D" uid="uid://b6um80216w1rx" path="res://tilesets/Dungeon_ObjectsBig.png" id="2_log6d"]
 [ext_resource type="Texture2D" uid="uid://mvkh8b6kvl5x" path="res://tilesets/tileset.png" id="3_3y3dv"]
 [ext_resource type="PackedScene" uid="uid://bohmnfj1ofkwb" path="res://room3_puzzles/key_1.tscn" id="4_a20bx"]
 

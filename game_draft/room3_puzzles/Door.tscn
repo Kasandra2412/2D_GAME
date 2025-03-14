@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://c10feec15rbya"]
 
-[ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://tilesets/Dungeon_FloorsWallsA5.png" id="1_fjv78"]
+[ext_resource type="Texture2D" uid="uid://dhkh3xys78okn" path="res://Dungeon_FloorsWallsA5.png" id="1_fjv78"]
 [ext_resource type="Script" path="res://room3_puzzles/door.gd" id="1_wqedt"]
 [ext_resource type="Texture2D" uid="uid://b0a0spegkug32" path="res://tilesets/More objects/Dungeon_ObjectBigdoor.png" id="2_xstei"]
 
