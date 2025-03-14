@@ -1,62 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw1x4mmojixj3"]
+[gd_scene load_steps=2 format=3 uid="uid://bw1x4mmojixj3"]
 
-[ext_resource type="Texture2D" uid="uid://b0a0spegkug32" path="res://tilesets/More objects/Dungeon_ObjectBigdoor.png" id="1_pwumu"]
+[ext_resource type="Texture2D" uid="uid://iqgnu3jwpnou" path="res://tilesets/Dungeon Tile Set.png" id="1_b1as2"]
 
-[sub_resource type="Animation" id="Animation_0dyyh"]
-resource_name = "door opening closing"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.833333, 1.66667, 2.33333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+[node name="Node2D" type="Node2D"]
 
-[sub_resource type="Animation" id="Animation_4bfho"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwg5b"]
-_data = {
-"RESET": SubResource("Animation_4bfho"),
-"door opening closing": SubResource("Animation_0dyyh")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbpt"]
-size = Vector2(32, 47)
-
-[node name="door" type="Sprite2D"]
-texture_filter = 1
-position = Vector2(-30, -132)
-texture = ExtResource("1_pwumu")
-vframes = 4
-frame = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pwg5b")
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-light_mask = 0
-visibility_layer = 16
-position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_ehbpt")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b1as2")
