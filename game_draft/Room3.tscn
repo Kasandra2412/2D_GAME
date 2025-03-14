@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://ry4c2wacydov"]
+[gd_scene load_steps=52 format=4 uid="uid://ry4c2wacydov"]
 
 [ext_resource type="Script" path="res://room_3.gd" id="1_q2yoj"]
 [ext_resource type="Texture2D" uid="uid://dl66aqn55wy75" path="res://tilesets/Dungeon_DecorationsC.png" id="1_xdbeu"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://2y5m583kd0jf" path="res://GUI assets/Fantasy Minimal Pixel Art GUI by eta-commercial-free/UI/HotkeyBox_34x34.png" id="26_w2loy"]
 [ext_resource type="StyleBox" uid="uid://b103a5ja01ptk" path="res://GUI assets/hover_button.tres" id="27_b7y6j"]
 [ext_resource type="StyleBox" uid="uid://3x6mhw2dccnq" path="res://GUI assets/themes_stylebox.tres" id="28_x2tw6"]
+[ext_resource type="AudioStream" uid="uid://bqf10gclw87e0" path="res://room3_puzzles/a_dungeon_ambience_loop-79423.mp3" id="30_ys2mi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wds1"]
 texture = ExtResource("1_xdbeu")
@@ -1684,6 +1685,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Your time is up. You did not escape in time. 
 Goodbye..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_ys2mi")
+volume_db = 2.476
+pitch_scale = 2.16
+autoplay = true
 
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor2" method="open_door"]
 [connection signal="activated" from="Pressure_plate" to="SpikedDoor3" method="open_door"]
