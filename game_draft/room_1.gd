@@ -1,16 +1,13 @@
-class_name Room1 extends Node2D
-@onready var label: Label = $Label
+extends Area2D
 
+@export var key_name: String = "gold_key"  # Unique key identifier
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
+signal key_picked_up(key_name)  # Signal for when key is collected
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var time_left = GlobalTimer.get_time_left()
-	var minutes = time_left[0] #minutes
-	var seconds = time_left[1] #secods
-	label.text="%02d:%02d" %[minutes,seconds]
-	pass
+func _ready():
+	connect("body_entered", _on_body_entered)  # Connect signal
+
+func _on_body_entered(body):
+	if body.name == "Player":  # Check if player touches key
+		key_picked_up.emit(key_name)  # Emit signal
+		queue_free()  # Remove key from scene 
